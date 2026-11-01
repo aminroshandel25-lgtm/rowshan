@@ -407,6 +407,25 @@ a.fxt:hover,button.fxt:hover{background:rgba(52,25,26,.06)}
   .fxgrid.vid{grid-template-columns:1fr}
   .fxt .ds{display:none}
 }
+
+/* ===== 3D scene ===== */
+.desk{perspective:1100px;perspective-origin:50% 45%}
+.js3d .it{animation:none;cursor:grab;touch-action:none;will-change:transform;-webkit-user-drag:none;-webkit-tap-highlight-color:transparent}
+.js3d .it.grab{cursor:grabbing;z-index:6}
+.js3d .it.grab .f3d,.js3d .it.grab .thumbf,.js3d .it.grab .app{filter:drop-shadow(0 24px 22px rgba(52,25,26,.35))}
+.js3d .it img{-webkit-user-drag:none;pointer-events:none}
+.js3d .center .mark,.js3d .center .scr,.js3d .center .bigfolder{will-change:transform}
+
+/* about: portrait + roles */
+.aphoto img{filter:none;image-rendering:pixelated;object-position:50% 20%}
+.hi{font-family:"Inter","Vazirmatn",system-ui,sans-serif!important;font-weight:800;font-size:clamp(26px,3.6vw,46px)!important;line-height:1.12!important;letter-spacing:-.015em!important;margin:0 0 .6em!important;display:flex;flex-direction:column}
+html[lang="fa"] .hi{line-height:1.35!important;letter-spacing:0!important;font-size:clamp(24px,3.2vw,40px)!important}
+.hi span:last-child{color:var(--sky)}
+.atxt p{max-width:34em}
+
+/* why rowshan */
+.why{display:flex;justify-content:center}
+.why video{width:min(100%,460px);aspect-ratio:4/5;display:block;border-radius:10px;background:#0000ee;box-shadow:0 16px 36px -14px rgba(52,25,26,.55)}
 </style>
 </head>
 <body>
@@ -442,15 +461,15 @@ a.fxt:hover,button.fxt:hover{background:rgba(52,25,26,.06)}
 
       <button class="it" data-open="work" style="--x:17%;--y:31%;--mx:20%;--my:19%"><span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span><span data-i="fWork">work</span></button>
       <span class="it dn" style="--x:35%;--y:20%;--mx:42%;--my:11%"><span class="app pr">Pr</span></span>
-      <button class="it" data-open="social" style="--x:69%;--y:21%;--mx:80%;--my:19%"><img class="thumbf" src="ig-ad.jpg" alt="" loading="lazy"><span>ig-ad.jpg</span></button>
+      <button class="it" data-open="social" style="--x:69%;--y:21%;--mx:80%;--my:19%"><img class="thumbf" src="ig-ad.jpg" alt="" loading="lazy"><span>rubik.mp4</span></button>
       <button class="it dn" data-open="social" style="--x:84%;--y:28%;--mx:80%;--my:36%"><span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span><span data-i="fSocial">social media</span></button>
       <span class="it dn" style="--x:87%;--y:55%"><span class="app ae">Ae</span></span>
 
-      <button class="it" data-open="social" style="--x:13%;--y:71%;--mx:20%;--my:80%"><img class="thumbf" src="fashion.jpg" alt="" loading="lazy"><span>fashion.jpg</span></button>
+      <button class="it" data-open="social" style="--x:13%;--y:71%;--mx:20%;--my:80%"><img class="thumbf" src="fashion.jpg" alt="" loading="lazy"><span>fashion-reel.mp4</span></button>
       <a class="it" href="#case-sec" style="--x:34%;--y:75%;--mx:80%;--my:81%"><span class="app pl">▶</span><span data-i="fReel">showreel</span></a>
       <button class="it dn" data-open="film" style="--x:27%;--y:91%"><span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span><span data-i="fFilm">film</span></button>
-      <button class="it dn" data-open="social" style="--x:83%;--y:78%"><img class="thumbf" src="haircut.jpg" alt="" loading="lazy"><span>haircut.jpg</span></button>
-      <button class="it dn" data-open="film" style="--x:68%;--y:90%"><img class="thumbf w" src="music-video.jpg" alt="" loading="lazy"><span>music-video.jpg</span></button>
+      <button class="it dn" data-open="social" style="--x:83%;--y:78%"><img class="thumbf" src="haircut.jpg" alt="" loading="lazy"><span>haircut-reel.mp4</span></button>
+      <button class="it dn" data-open="film" style="--x:68%;--y:90%"><img class="thumbf w" src="music-video.jpg" alt="" loading="lazy"><span>music-video.mp4</span></button>
 
       <div class="center">
         <button class="bigfolder" data-open="work" aria-label="work" style="position:absolute;left:50%;top:50%;width:21%;transform:translate(-50%,-30%)"><span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span></button>
@@ -479,19 +498,13 @@ a.fxt:hover,button.fxt:hover{background:rgba(52,25,26,.06)}
     <section id="about" class="about">
     <div class="acard fade">
       <div class="aphoto">
-        <div class="frame2"><img src="portrait.jpg" alt="" onerror="this.remove()"><svg class="mark" viewBox="0 0 554 324" aria-hidden="true"><use href="#roshan"/></svg></div>
+        <div class="frame2"><svg class="mark" viewBox="0 0 554 324" aria-hidden="true"><use href="#roshan"/></svg><img src="portrait.png" alt="Amin Roshandel" onerror="this.remove()"></div>
         <span class="tag" data-i="aTag">about me</span>
         <svg class="sticker" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
       </div>
       <div class="atxt">
-        <h2 class="hi" data-i="aHi">Hi, I'm Amin!</h2>
+        <h2 class="hi" data-i="aHi" data-html></h2>
         <p data-i="lede"></p>
-        <p class="spec" data-i="aSpec">What I specialize in:</p>
-        <ul class="slist">
-          <li><span><b data-i="sp1b"></b> <span data-i="sp1"></span></span></li>
-          <li><span><b data-i="sp2b"></b> <span data-i="sp2"></span></span></li>
-          <li><span><b data-i="sp3b"></b> <span data-i="sp3"></span></span></li>
-        </ul>
         <div class="ctas">
           <a class="btn primary pending" href="#" aria-disabled="true" data-i="ctaReel">▶ Showreel</a>
           <a class="btn" href="#contact" data-i="ctaContact">Contact</a>
@@ -502,7 +515,7 @@ a.fxt:hover,button.fxt:hover{background:rgba(52,25,26,.06)}
           <li><b data-i="e1a"></b><small data-i="e1b"></small></li>
           <li><b data-i="e2a"></b><small data-i="e2b"></small></li></ul></div>
         <div><h3 data-i="aSk">Skills</h3><ul>
-          <li>Premiere Pro</li><li>After Effects</li><li data-i="k3"></li><li data-i="k4"></li><li data-i="k5"></li></ul></div>
+          <li>Premiere Pro</li><li>After Effects</li><li data-i="k3"></li><li data-i="k6"></li><li data-i="k4"></li><li data-i="k5"></li></ul></div>
         <div><h3 data-i="aCo">Contacts</h3><ul>
           <li><a href="mailto:aminroshandel25@gmail.com"><span class="ci">@</span>aminroshandel25@gmail.com</a></li>
           <li><a href="https://www.instagram.com/iaintrowshan/" target="_blank" rel="noopener"><span class="ci">IG</span>iaintrowshan</a></li>
@@ -518,22 +531,7 @@ a.fxt:hover,button.fxt:hover{background:rgba(52,25,26,.06)}
     <div class="skills" id="skills"></div>
   </section>
 
-  <section id="case-sec" class="win"><div class="tb"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">ROWSHAN › <span data-i="caseT"></span></span></div>
-    <div class="sec-head"><h2><span class="rv" data-i="caseT"></span></h2><span class="label" data-i="caseS"></span></div>
-    <div class="case fade">
-      <div class="phone" aria-hidden="true"><svg class="mark" viewBox="0 0 554 324"><use href="#roshan"/></svg><span>9:16 · 00:30</span></div>
-      <div>
-        <h3 data-i="caseH"></h3>
-        <p data-i="caseP"></p>
-        <ul class="steps">
-          <li><b>01</b><span data-i="st1"></span></li>
-          <li><b>02</b><span data-i="st2"></span></li>
-          <li><b>03</b><span data-i="st3"></span></li>
-          <li><b>04</b><span data-i="st4"></span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <section id="case-sec" class="win"><div class="tb"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">ROWSHAN › <span data-i="caseT"></span></span></div><div class="sec-head"><h2><span class="rv" data-i="caseT"></span></h2><span class="label" data-i="caseS"></span></div><div class="why fade"><video src="why-rowshan.mp4" poster="why-rowshan.jpg" controls autoplay muted loop playsinline preload="metadata"></video></div></section>
 
   <section id="tools-sec" class="win"><div class="tb"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">ROWSHAN › <span data-i="toolT"></span></span></div>
     <div class="sec-head"><h2><span class="rv" data-i="toolT"></span></h2></div>
@@ -564,18 +562,18 @@ a.fxt:hover,button.fxt:hover{background:rgba(52,25,26,.06)}
 <script>
 const T={
 en:{fFav:"Favorites",fItems:"items",fItem:"item",fBack:"Back",cWin:"contact",mWork:"work",mSocial:"social media",fWork:"work",fSocial:"social media",fFilm:"film",fReel:"showreel",deskScript:"editor",deskYear:"(2026)",
-aTag:"about me",aHi:"Hi, I'm Amin!",aSpec:"What I specialize in:",
+aTag:"about me",aHi:"<span>Editor</span><span>Art Director</span><span>Cinematographer</span>",aSpec:"What I specialize in:",
 sp1b:"Editing —",sp1:"pacing and structure for music videos, short films, fashion and brand reels",
 sp2b:"Motion graphics —",sp2:"titles, 3D-style infographics and product ads, code-driven and AI-assisted",
 sp3b:"Art direction —",sp3:"concept, set, color and look before the camera rolls",
 aExp:"Experience",e1a:"4+ years",e1b:"Video editor & motion designer",e2a:"Ongoing",e2b:"Art director, studio",
-aSk:"Skills",k3:"Motion graphics",k4:"Brand identity",k5:"AI-assisted automation",aCo:"Contacts",
+aSk:"Skills",k3:"Motion graphics",k6:"Cinematography",k4:"Brand identity",k5:"AI-assisted automation",aCo:"Contacts",
 vEdit:"Edit",vFull:"Full",eyebrow:"Video Editor · Motion · Art Director",
 h1:"I'm <em>Amin Roshandel</em>.",
-lede:"Video editor, motion designer and art director with four years of work across music videos, short films, performance art, fashion and product ads. I shape every project around what it needs and around the identity of the brand behind it, from the rhythm of the edit and the color to the type and motion.",
+lede:"Amin Roshandel, working as ROWSHAN. Four years of cutting music videos, short films, fashion and product ads. I shape rhythm, color and brand identity, and use automation and AI to build motion and repeat work faster.",
 s1n:"4+",s1:"years of professional work",s2n:"6",s2:"video formats",s3:"Premiere Pro & After Effects",s4n:"Studio",s4:"art director, ongoing",
 workT:"Selected work",workS:"9 pieces",gSocial:"Social & brand",gProd:"Product ads · Animation & AI",p1:"Jelly Moon · Launch spot",p1d:"Packaging hero shot and a burst of jelly beans, timed to land the brand name.",p2:"Stacked · Product build",p2d:"An ingredient-by-ingredient build on a retro sunburst, made for a looping social ad.",pnL:"Pipeline",pn:"AI-generated product animation, directed shot by shot, then edited, timed and finished for social feeds. Fast to iterate, easy to version for each market.",teaser:"Teaser",gFilm:"Film & music",watch:"Watch",skillT:"Craft",skillS:"What I bring to a project",
-caseT:"Case study",caseS:"In production",caseH:"Editing Sells",
+caseT:"Why Rowshan",caseS:"0:15",caseH:"Editing Sells",
 caseP:"A 30-second vertical motion piece on how editing changes the way a product looks and sells. It moves from raw footage to a graded, psychedelic finish, with the data shown as 3D infographics. Built from script to render with a code-driven, AI-assisted pipeline, in Persian and English.",
 st1:"Scenario and visual direction",st2:"Code-rendered motion, 3D infographics",st3:"Edit, pacing and grade",st4:"Persian and English deliverables",
 stillT:"Photography & Cinematography",stillS:"Behind the lens",ph1:"Fashion",ph2:"Portrait",ph3:"Music video DP",ph4:"Documentary",
@@ -583,19 +581,19 @@ toolT:"Tools",t1:"edit · 4 years",t3:"motion & compositing",t2n:"AI-assisted au
 cT:"Let's cut<br>something together.",cL:"Email",copy:"Copy",copied:"Copied",foot:"Editor · Motion · Art Director",
 dir:"Directed & edited",ed:"Edited",yt:"YouTube",ig:"Instagram"},
 fa:{fFav:"علاقه‌مندی‌ها",fItems:"مورد",fItem:"مورد",fBack:"بازگشت",cWin:"تماس",mWork:"نمونه‌کارها",mSocial:"سوشال مدیا",fWork:"نمونه‌کارها",fSocial:"سوشال مدیا",fFilm:"فیلم",fReel:"شوریل",deskScript:"تدوینگر",deskYear:"(۲۰۲۶)",
-aTag:"درباره من",aHi:"سلام، من امین‌ام!",aSpec:"در این کارها تخصص دارم:",
+aTag:"درباره من",aHi:"<span>تدوینگر</span><span>کارگردان هنری</span><span>تصویربردار</span>",aSpec:"در این کارها تخصص دارم:",
 sp1b:"تدوین —",sp1:"ریتم و ساختار برای موزیک ویدیو، فیلم کوتاه، فشن و ریل برند",
 sp2b:"موشن گرافیک —",sp2:"تیتراژ، اینفوگرافیک سه‌بعدی و تبلیغ محصول با پایپ‌لاین کدنویسی‌شده و هوش مصنوعی",
 sp3b:"کارگردانی هنری —",sp3:"کانسپت، صحنه، رنگ و فضا پیش از فیلمبرداری",
 aExp:"سوابق",e1a:"+۴ سال",e1b:"تدوینگر و موشن گرافیست",e2a:"در حال فعالیت",e2b:"کارگردان هنری، استودیو",
-aSk:"مهارت‌ها",k3:"موشن گرافیک",k4:"هویت برند",k5:"اتوماسیون با هوش مصنوعی",aCo:"تماس",
+aSk:"مهارت‌ها",k3:"موشن گرافیک",k6:"تصویربرداری",k4:"هویت برند",k5:"اتوماسیون با هوش مصنوعی",aCo:"تماس",
 vEdit:"ادیت",vFull:"کامل",eyebrow:"تدوینگر · موشن گرافیست · کارگردان هنری",
 h1:"من <em>امین روشندل</em> هستم.",
-lede:"تدوینگر، موشن گرافیست و کارگردان هنری با چهار سال سابقه در موزیک ویدیو، فیلم کوتاه، پرفورمنس آرت، ویدیوی فشن و تبلیغات محصول. هر پروژه را بر اساس نیاز همان پروژه و هویت برندش پیش می‌برم؛ از ریتم تدوین و رنگ تا تایپوگرافی و موشن.",
+lede:"امین روشندل، با نام هنری روشن. چهار سال تدوین موزیک ویدیو، فیلم کوتاه، فشن و تبلیغات محصول. ریتم، رنگ و هویت برند را می‌سازم و با اتوماسیون و هوش مصنوعی، موشن و کارهای تکراری را سریع‌تر تحویل می‌دهم.",
 ctaReel:"▶ شوریل",ctaContact:"تماس",
 s1n:"+۴",s1:"سال سابقه حرفه‌ای",s2n:"۶",s2:"فرمت ویدیویی",s3:"پریمیر پرو و افترافکت",s4n:"استودیو",s4:"کارگردان هنری، در حال فعالیت",
 workT:"نمونه‌کارها",workS:"۹ نمونه‌کار",gSocial:"سوشال مدیا و برند",gProd:"تبلیغات محصول · انیمیشن و هوش مصنوعی",p1:"جلی مون · تیزر معرفی",p1d:"شات اصلی بسته‌بندی و انفجار پاستیل‌ها، با زمان‌بندی‌ای که روی اسم برند فرود میاد.",p2:"لایه به لایه · ساخت محصول",p2d:"چیده شدن مواد یکی‌یکی روی پس‌زمینه رترو، برای تبلیغ لوپ‌شونده در سوشال.",pnL:"روند کار",pn:"انیمیشن محصول با هوش مصنوعی که شات به شات کارگردانی شده و بعد تدوین، زمان‌بندی و برای فید سوشال نهایی شده. سریع قابل تغییره و راحت برای هر بازار نسخه جدید می‌گیره.",teaser:"تیزر",gFilm:"فیلم و موزیک",watch:"تماشا",skillT:"مهارت‌ها",skillS:"چه چیزی به پروژه اضافه می‌کنم",
-caseT:"پروژه شاخص",caseS:"در حال تولید",caseH:"ادیت می‌فروشد",
+caseT:"چرا روشن",caseS:"۰:۱۵",caseH:"ادیت می‌فروشد",
 caseP:"یک موشن عمودی ۳۰ ثانیه‌ای درباره اینکه تدوین چطور ظاهر و فروش یک محصول را تغییر می‌دهد. از فوتیج خام شروع می‌شود و به فینیشی رنگ‌شده و سایکدلیک می‌رسد و داده‌ها به شکل اینفوگرافیک سه‌بعدی نمایش داده می‌شوند. از سناریو تا رندر با پایپ‌لاین کدنویسی‌شده و کمک هوش مصنوعی، در دو نسخه فارسی و انگلیسی.",
 st1:"سناریو و جهت بصری",st2:"موشن رندرشده با کد، اینفوگرافیک سه‌بعدی",st3:"تدوین، ریتم و اصلاح رنگ",st4:"خروجی فارسی و انگلیسی",
 stillT:"عکاسی و تصویربرداری",stillS:"پشت دوربین",ph1:"فشن",ph2:"پرتره",ph3:"تصویربرداری موزیک ویدیو",ph4:"مستند",
@@ -614,12 +612,12 @@ const WORK=[
  {grp:"film",url:YT+"or1-L6ZBUG8",src:"yt",dir:true,img:"short-film.jpg",tz:IG+"DeCFwewq_i9/",g:"linear-gradient(150deg,#262b2e,#5c6566)",en:["Short film","Story structure, take selection and pacing that holds attention."],fa:["فیلم کوتاه","ساختار روایت، انتخاب بهترین برداشت و ریتمی که مخاطب را نگه می‌دارد."]}
 ];
 const SKILLS=[
- {en:["Editing & pacing","Rhythm, structure and timing that keep a viewer to the end. Most of my work is cut in Premiere Pro."],fa:["تدوین و ریتم","ریتم، ساختار و زمان‌بندی‌ای که مخاطب را تا آخر نگه می‌دارد. بیشتر کارهایم با پریمیر پرو تدوین شده."]},
- {en:["Brand identity","Visuals designed for the brand, with its colors, type and tone kept consistent across every video."],fa:["طراحی و حفظ هویت برند","ویژوال‌هایی متناسب با برند، با رنگ، تایپ و لحنی که در همه ویدیوها یکدست می‌ماند."]},
- {en:["Motion graphics","Animated titles, infographics and 3D-style motion that explain and sell."],fa:["موشن گرافی","تیتراژ متحرک، اینفوگرافیک و موشن سه‌بعدی که هم توضیح می‌دهد و هم می‌فروشد."]},
- {en:["Art direction","Art director at a studio: concept, set, color and look before the camera rolls."],fa:["کارگردانی هنری","کارگردان هنری در استودیو: کانسپت، صحنه، رنگ و فضا پیش از فیلمبرداری."]},
- {en:["Directing","Directed most of the work shown here: the short film, the performance art piece and the brand reels."],fa:["کارگردانی","کارگردانی بیشتر نمونه‌کارهای همین صفحه: فیلم کوتاه، پرفورمنس آرت و ریل‌های برند."]},
- {en:["Automated workflow","AI-assisted, scripted pipelines for motion and repetitive edit tasks, so versions and languages ship faster."],fa:["روند کاری اتوماتیک","پایپ‌لاین‌های اسکریپتی با کمک هوش مصنوعی برای موشن و کارهای تکراری، تا نسخه‌ها و زبان‌ها سریع‌تر آماده شوند."]}
+ {en:["Editing & pacing","Rhythm and structure that hold attention."],fa:["تدوین و ریتم","ریتم و ساختاری که مخاطب را نگه می‌دارد."]},
+ {en:["Brand identity","Color, type and tone, consistent in every video."],fa:["هویت برند","رنگ، تایپ و لحنی یکدست در همه ویدیوها."]},
+ {en:["Motion graphics","Titles, infographics and 3D-style motion."],fa:["موشن گرافیک","تیتراژ، اینفوگرافیک و موشن سه‌بعدی."]},
+ {en:["Art direction","Concept, set and color before the camera rolls."],fa:["کارگردانی هنری","کانسپت، صحنه و رنگ پیش از فیلمبرداری."]},
+ {en:["Cinematography","Camera, light and framing for film and brand work."],fa:["تصویربرداری","دوربین، نور و کادر برای فیلم و برند."]},
+ {en:["Automation & AI","Scripted pipelines and AI tools for faster edits, motion and versions."],fa:["اتوماسیون و هوش مصنوعی","پایپ‌لاین اسکریپتی و ابزار هوش مصنوعی برای تدوین، موشن و نسخه‌های سریع‌تر."]}
 ];
 
 let lang="fa",view="edit";
@@ -714,6 +712,56 @@ fxtb.addEventListener("pointermove",e=>{if(!drag)return;
   fxwin.style.left=Math.max(0,Math.min(drag.d.width-w,e.clientX-drag.d.left-drag.dx))+"px";
   fxwin.style.top=Math.max(0,Math.min(drag.d.height-h,e.clientY-drag.d.top-drag.dy))+"px"});
 fxtb.addEventListener("pointerup",()=>{drag=null});
+
+/* ===== 3D desk: drag, depth, parallax ===== */
+(function(){
+  const desk=document.getElementById("desk");if(!desk)return;
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  desk.classList.add("js3d");
+  const Z=[40,-60,90,20,-80,60,0,30,-40,70];
+  const S=[...desk.querySelectorAll(".it")].map((el,i)=>({el,ox:0,oy:0,vx:0,vy:0,z:Z[i%Z.length],ph:i*1.7,lift:0,down:false,dragging:false,wasDrag:false}));
+  const cMark=desk.querySelector(".center .mark"),cScr=desk.querySelector(".center .scr"),cBig=desk.querySelector(".center .bigfolder");
+  let px=0,py=0,tpx=0,tpy=0;
+  if(!reduce){
+    desk.addEventListener("pointermove",e=>{const r=desk.getBoundingClientRect();tpx=(e.clientX-r.left)/r.width-.5;tpy=(e.clientY-r.top)/r.height-.5});
+    desk.addEventListener("pointerleave",()=>{tpx=0;tpy=0});
+  }
+  function clamp(o){
+    const W=desk.clientWidth,H=desk.clientHeight,cx=o.el.offsetLeft+o.ox,cy=o.el.offsetTop+o.oy;
+    const nx=Math.max(36,Math.min(W-36,cx)),ny=Math.max(56,Math.min(H-40,cy));
+    if(nx!==cx){o.ox+=nx-cx;o.vx=0}if(ny!==cy){o.oy+=ny-cy;o.vy=0}
+  }
+  S.forEach(o=>{
+    o.el.setAttribute("draggable","false");
+    o.el.addEventListener("pointerdown",e=>{if(e.button)return;o.down=true;o.dragging=false;o.sx=e.clientX;o.sy=e.clientY;o.bx=o.ox;o.by=o.oy;o.lx=e.clientX;o.ly=e.clientY;o.vx=o.vy=0;try{o.el.setPointerCapture(e.pointerId)}catch(_){}});
+    o.el.addEventListener("pointermove",e=>{
+      if(!o.down)return;const dx=e.clientX-o.sx,dy=e.clientY-o.sy;
+      if(!o.dragging&&Math.hypot(dx,dy)>6){o.dragging=true;o.el.classList.add("grab")}
+      if(o.dragging){o.vx=(e.clientX-o.lx)*.6;o.vy=(e.clientY-o.ly)*.6;o.lx=e.clientX;o.ly=e.clientY;o.ox=o.bx+dx;o.oy=o.by+dy;clamp(o)}
+    });
+    const up=()=>{if(!o.down)return;o.down=false;if(o.dragging){o.dragging=false;o.el.classList.remove("grab");o.wasDrag=true;setTimeout(()=>{o.wasDrag=false},60)}};
+    o.el.addEventListener("pointerup",up);o.el.addEventListener("pointercancel",up);
+    o.el.addEventListener("click",e=>{if(o.wasDrag){e.preventDefault();e.stopPropagation()}},true);
+  });
+  function frame(ts){
+    const t=ts/1000;px+=(tpx-px)*.06;py+=(tpy-py)*.06;
+    S.forEach(o=>{
+      if(!o.dragging&&(Math.abs(o.vx)>.05||Math.abs(o.vy)>.05)){o.ox+=o.vx;o.oy+=o.vy;clamp(o)}
+      o.vx*=o.dragging?.8:.92;o.vy*=o.dragging?.8:.92;
+      o.lift+=((o.dragging?110:0)-o.lift)*.16;
+      const fx=reduce?0:Math.cos(t*.8+o.ph)*3,fy=reduce?0:Math.sin(t*1.1+o.ph)*6;
+      const tx=o.ox+fx-px*o.z*.4,ty=o.oy+fy-py*o.z*.4;
+      const lim=v=>Math.max(-24,Math.min(24,v));
+      const ry=px*16+lim(o.vx*1.4),rx=-py*12+lim(-o.vy*1.4);
+      o.el.style.transform=`translate(-50%,-50%) translate3d(${tx.toFixed(1)}px,${ty.toFixed(1)}px,${(o.z+o.lift).toFixed(0)}px) rotateX(${rx.toFixed(1)}deg) rotateY(${ry.toFixed(1)}deg)`;
+    });
+    if(cMark)cMark.style.transform=`translate(${(-px*22).toFixed(1)}px,${(-py*16).toFixed(1)}px)`;
+    if(cScr)cScr.style.transform=`translate(${(-px*46).toFixed(1)}px,${(-py*30).toFixed(1)}px) rotate(-4deg)`;
+    if(cBig)cBig.style.transform=`translate(-50%,-30%) translate(${(-px*10).toFixed(1)}px,${(-py*8).toFixed(1)}px)`;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
 
 parseHash();render();
 </script>
