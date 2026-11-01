@@ -12,7 +12,7 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Rowshan Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;500;700&family=Vazirmatn:wght@300;400;500;700&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;500;700&family=Vazirmatn:wght@300;400;500;700&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;800&family=Pinyon+Script&family=Playfair+Display:ital,wght@1,400&display=swap">
 <style>
 /* Layout: a graded film frame — 2.39:1 letterboxed hero carrying the ROSHAN mark, credits-style titles, work laid out as reels */
 :root{
@@ -141,7 +141,6 @@ html[lang="fa"] .sk h3{text-transform:none;font-weight:700;font-size:17px}
 .case>*{min-width:0}
 .phone{aspect-ratio:9/16;max-width:240px;width:100%;background:linear-gradient(175deg,#3a3936 0 38%,#6a4a42 68%,#B4584A);position:relative;overflow:hidden}
 .phone .mark{position:absolute;inset-inline:0;margin:auto;top:42%;width:58%;color:#E6E1D8;opacity:.9}
-.phone video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .phone span{position:absolute;bottom:12px;inset-inline:0;text-align:center;font-family:var(--mono);font-size:10.5px;color:rgba(255,255,255,.7);direction:ltr}
 .case h3{font-size:clamp(26px,3vw,36px);text-transform:uppercase;margin-bottom:14px}
 html[lang="fa"] .case h3{text-transform:none;font-weight:700}
@@ -206,6 +205,208 @@ html[lang="fa"] .contact h2{text-transform:none;font-weight:700;font-size:clamp(
   .hero{padding-block:24px 12px}
   .hud{font-size:9px}
 }
+
+/* ===== Desktop-style hero + About (cream, folders, cursor) ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero{padding-block:28px 24px}
+.desk{--cream:#F5EFE4;--ink:#34191A;--sky:#8BA6BA;
+  position:relative;direction:ltr;aspect-ratio:1.62/1;background:var(--cream);color:var(--ink);border-radius:20px;overflow:hidden;
+  font-family:"Inter","Vazirmatn",system-ui,sans-serif;user-select:none}
+.desk::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;border-radius:inherit;
+  background:radial-gradient(120% 90% at 50% 40%,transparent 55%,rgba(52,25,26,.10))}
+.desk a{color:inherit;text-decoration:none}
+.menu{position:absolute;inset:3.2% 5% auto;display:flex;justify-content:space-between;font-weight:500;font-size:clamp(11px,1.45vw,17px);z-index:5}
+.menu a:hover{text-decoration:underline;text-underline-offset:4px}
+.menu .mid{font-weight:800;letter-spacing:.02em}
+.menu .tcw{font-family:var(--mono);font-size:.78em;opacity:.55;direction:ltr}
+.it{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:.55em;
+  font-size:clamp(9px,1.12vw,13.5px);z-index:2;text-align:center;line-height:1.25}
+.it svg.fo{width:clamp(48px,9.2vw,118px);height:auto;display:block;filter:drop-shadow(0 6px 8px rgba(52,25,26,.18));transition:transform .5s var(--ease)}
+a.it:hover svg.fo,a.it:hover .thumbf,a.it:hover .app{transform:translateY(-6px) scale(1.04)}
+.thumbf{width:clamp(44px,7.4vw,96px);aspect-ratio:4/5;object-fit:cover;border-radius:4px;box-shadow:0 6px 14px rgba(52,25,26,.25);transition:transform .5s var(--ease);display:block}
+.thumbf.w{aspect-ratio:3/2;width:clamp(58px,9.6vw,124px)}
+.app{width:clamp(38px,5.8vw,76px);aspect-ratio:1;border-radius:22%;display:grid;place-items:center;font-weight:800;font-size:clamp(14px,2.3vw,30px);letter-spacing:-.02em;
+  box-shadow:0 6px 12px rgba(52,25,26,.25);transition:transform .5s var(--ease)}
+.app.pr{background:#00005B;color:#9999FF}
+.app.ae{background:#00005B;color:#D291FF}
+.app.pl{background:#1d1c1b;color:#F5EFE4;font-size:clamp(14px,2.2vw,28px)}
+.center{position:absolute;left:50%;top:50%;width:100%;transform:translate(-50%,-50%);z-index:3;pointer-events:none}
+.center .bigfolder{position:absolute;left:50%;top:50%;width:21%;transform:translate(-50%,-30%);filter:drop-shadow(0 12px 16px rgba(52,25,26,.2));z-index:0}
+.center .bigfolder svg{width:100%;height:auto;display:block}
+.center .mark{position:relative;display:block;margin:0 auto;width:38%;height:auto;color:var(--ink);z-index:1}
+.center .scr{position:absolute;left:27%;top:-6%;font-family:"Pinyon Script","Vazirmatn",cursive;font-size:clamp(34px,8.2vw,112px);line-height:1;color:var(--sky);transform:rotate(-4deg);z-index:2;white-space:nowrap}
+html[lang="fa"] .center .scr{font-family:"Vazirmatn",sans-serif;font-weight:300;font-size:clamp(28px,6vw,80px);left:27%;top:-6%}
+.year{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(18px,3.5vw,46px);z-index:2;white-space:nowrap}
+.cur{position:absolute;left:56%;top:64%;width:clamp(26px,4.2vw,52px);z-index:4;filter:drop-shadow(0 3px 3px rgba(0,0,0,.25))}
+@media (prefers-reduced-motion:no-preference){
+  .cur{animation:curmove 7s var(--ease) infinite alternate}
+  @keyframes curmove{0%{transform:translate(0,0)}45%{transform:translate(-18%,-30%)}100%{transform:translate(6%,4%)}}
+  .it{animation:bob 6s ease-in-out infinite alternate}
+  .it:nth-child(2n){animation-duration:7.5s;animation-delay:-2s}
+  .it:nth-child(3n){animation-duration:5.2s;animation-delay:-3.5s}
+  @keyframes bob{from{margin-top:0}to{margin-top:-7px}}
+}
+
+/* about */
+.about{margin-block:72px 96px}
+.acard{--cream:#F5EFE4;--ink:#34191A;--sky:#8BA6BA;background:var(--cream);color:var(--ink);border-radius:20px;padding:clamp(24px,5vw,64px);
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:clamp(24px,5vw,64px);align-items:start;font-family:"Inter","Vazirmatn",system-ui,sans-serif}
+.acard>*{min-width:0}
+.aphoto{position:relative;margin:22px 0 0 18px}
+.aphoto .frame2{position:relative;aspect-ratio:3/4;border:5px solid var(--ink);border-radius:22px;overflow:hidden;background:#E4DAC9;display:grid;place-items:center}
+.aphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.aphoto .mark{width:62%;color:var(--ink);opacity:.9}
+.tag{position:absolute;top:-24px;left:-22px;background:var(--ink);color:var(--cream);font-family:"Pinyon Script","Vazirmatn",cursive;font-size:clamp(28px,4.4vw,50px);line-height:1;padding:.1em .45em .22em;border-radius:34px;transform:rotate(-5deg);z-index:2;white-space:nowrap}
+html[lang="fa"] .tag{font-family:"Vazirmatn",sans-serif;font-weight:700;font-size:clamp(20px,3vw,32px);padding:.25em .7em}
+.sticker{position:absolute;right:-22px;bottom:-22px;width:clamp(56px,8vw,92px);z-index:2}
+.hi{font-family:"Pinyon Script","Vazirmatn",cursive;font-size:clamp(38px,6vw,76px);font-weight:400;line-height:1.05;margin:0 0 .3em;text-transform:none;letter-spacing:0}
+html[lang="fa"] .hi{font-family:"Vazirmatn",sans-serif;font-weight:700;font-size:clamp(28px,4.4vw,52px);line-height:1.3}
+.atxt p{margin:0 0 14px;font-size:clamp(15px,1.55vw,19px);line-height:1.6}
+.atxt .spec{margin-top:18px}
+.slist{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:8px}
+.slist li{display:flex;gap:10px;align-items:baseline;font-size:clamp(15px,1.5vw,18px);line-height:1.5}
+.slist li::before{content:"✦";color:var(--sky);flex:none}
+.slist b{font-weight:800}
+.acard .ctas{margin-top:6px}
+.acard .btn{border-color:var(--ink);color:var(--ink);border-radius:999px}
+.acard .btn:hover{background:rgba(52,25,26,.08)}
+.acard .btn.primary{background:var(--ink);color:var(--cream)}
+.acols{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,4vw,48px);margin-top:clamp(8px,2vw,24px);padding-top:clamp(18px,3vw,32px);border-top:1px solid rgba(52,25,26,.2)}
+.acols h3{font-family:inherit;font-weight:800;font-size:clamp(18px,2vw,26px);margin:0 0 12px;text-transform:none;letter-spacing:0}
+html[lang="fa"] .acols h3{font-size:clamp(17px,1.8vw,22px)}
+.acols ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:clamp(14px,1.45vw,17px)}
+.acols li small{display:block;opacity:.65;font-size:.82em;font-weight:400}
+.acols li b{font-weight:600}
+.acols a{display:inline-flex;gap:10px;align-items:center;text-decoration:none}
+.acols a:hover{text-decoration:underline;text-underline-offset:4px}
+.ci{width:1.7em;height:1.7em;border-radius:50%;background:var(--ink);color:var(--cream);display:inline-grid;place-items:center;font-size:.78em;font-weight:800;flex:none;direction:ltr}
+
+@media (max-width:760px){
+  .desk{aspect-ratio:.86/1}
+  .it{left:var(--mx,var(--x));top:var(--my,var(--y))}
+  .it.dn{display:none}
+  .center{top:50%}
+  .center .mark{width:72%}
+  .center .bigfolder{width:38%}
+  .center .scr{left:14%;top:-14%}
+  html[lang="fa"] .center .scr{left:16%;top:-12%}
+  .cur{left:60%;top:62%}
+  .menu .mid{display:none}
+  .year{bottom:5%}
+  .menu{inset:2.6% 6% auto}
+  .acard{grid-template-columns:1fr}
+  .aphoto{max-width:340px;margin-inline:auto}
+  .acols{grid-template-columns:1fr}
+  .it svg.fo{width:clamp(54px,17vw,84px)}
+  .thumbf{width:clamp(48px,15vw,76px)}
+  .thumbf.w{width:clamp(60px,19vw,96px)}
+  .app{width:clamp(40px,12vw,58px);font-size:clamp(15px,5vw,22px)}
+  .it{font-size:11px}
+}
+
+/* ===== 3D folders ===== */
+.f3d{--w:clamp(54px,9.2vw,118px);position:relative;display:block;width:var(--w);aspect-ratio:1.28;transform-style:preserve-3d;
+  transform:perspective(520px) rotateX(10deg) rotateY(-12deg);transition:transform .6s var(--ease);filter:drop-shadow(0 12px 10px rgba(52,25,26,.22))}
+.f3d i{position:absolute;display:block}
+.f3d .b{inset:10% 0 0 0;border-radius:7% 9% 10% 10%/9% 9% 10% 10%;background:linear-gradient(#3F86BC,#2F70A5)}
+.f3d .b::before{content:"";position:absolute;left:0;top:-13%;width:44%;height:18%;border-radius:12px 12px 0 0;background:#3F86BC;clip-path:polygon(0 0,82% 0,100% 100%,0 100%)}
+.f3d .p{left:7%;right:7%;top:18%;bottom:16%;border-radius:3px;background:repeating-linear-gradient(#fff 0 6px,#e8e1d4 6px 7px);transform:translateZ(6px);transition:transform .6s var(--ease);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.f3d .fr{left:0;right:0;top:30%;bottom:0;border-radius:6% 6% 10% 10%/8% 8% 10% 10%;background:linear-gradient(#8DC5E9 0,#5AA0D2 60%,#4A90C5);
+  transform:translateZ(14px);transform-origin:50% 100%;transition:transform .6s var(--ease);box-shadow:inset 0 2px 0 rgba(255,255,255,.6),inset 0 -3px 6px rgba(20,70,120,.25)}
+button.it,button.bigfolder,.fxbtn{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}
+.it:hover .f3d,.bigfolder:hover .f3d,.fxt:hover .f3d{transform:perspective(520px) rotateX(4deg) rotateY(-4deg) translateY(-6px)}
+.it:hover .f3d .fr,.bigfolder:hover .f3d .fr,.fxt:hover .f3d .fr{transform:translateZ(14px) rotateX(-34deg)}
+.it:hover .f3d .p,.bigfolder:hover .f3d .p,.fxt:hover .f3d .p{transform:translateZ(6px) translateY(-14%)}
+.center .bigfolder{pointer-events:auto;z-index:0}
+.center .bigfolder .f3d{--w:100%}
+.it:focus-visible,.bigfolder:focus-visible{outline:2px solid var(--sky);outline-offset:6px;border-radius:10px}
+.it .f3d{transition:transform .6s var(--ease)}
+a.it:hover .thumbf,button.it:hover .thumbf{transform:translateY(-6px) scale(1.04)}
+
+/* ===== Finder windows ===== */
+.win{--bg:#F5EFE4;--surface:#EDE5D6;--surface-2:#E4DAC9;--line:rgba(52,25,26,.18);--fg:#34191A;--muted:#7A645E;--accent:#B4584A;--frame:#34191A;--sky:#8BA6BA;
+  background:var(--bg);color:var(--fg);border-radius:16px;overflow:hidden;box-shadow:0 24px 50px -24px rgba(0,0,0,.7);font-family:var(--body);margin-bottom:56px}
+.tb{display:flex;align-items:center;gap:8px;padding:11px 14px;background:linear-gradient(#EFE7D8,#E6DCCA);border-bottom:1px solid var(--line);position:relative;direction:ltr}
+.tl{width:12px;height:12px;border-radius:50%;display:inline-block;border:0;padding:0;flex:none}
+.tl.r{background:#EC6A5E}.tl.y{background:#F4BF4F}.tl.g{background:#61C554}
+button.tl{cursor:pointer}
+.ttl{position:absolute;inset-inline:60px;text-align:center;font-size:13px;font-weight:600;color:var(--fg);pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:inherit}
+html[lang="fa"] .ttl{direction:rtl}
+.win>:not(.tb){margin-inline:clamp(16px,3vw,34px)}
+.win>.tb+*{margin-top:clamp(18px,3vw,32px)}
+.win>:last-child{margin-bottom:clamp(18px,3vw,34px)}
+.win>.fin{margin:0!important}
+.contact.win{padding:0 0 clamp(20px,4vw,40px);border-top:0;row-gap:0}
+.contact.win>.tb{grid-column:1/-1;margin:0}
+.contact.win>.tb~*{margin-top:clamp(24px,4vw,44px)}
+.contact.win>:last-child{margin-bottom:0}
+#contact.win .copy{border-radius:999px}
+.win .btn{border-color:var(--line)}
+.win .btn:hover{border-color:var(--fg)}
+.win .phone{background:linear-gradient(175deg,#4a3d38 0 38%,#7a4a3e 68%,#B4584A)}
+
+.fin{display:grid;grid-template-columns:180px minmax(0,1fr);min-height:420px;background:var(--bg);color:var(--fg);direction:ltr}
+html[lang="fa"] .fin{direction:rtl}
+.fxsb{background:var(--surface);padding:14px 10px;display:flex;flex-direction:column;gap:2px;border-inline-end:1px solid var(--line);font-size:13px}
+.fxsb .h{font-size:11px;font-weight:700;color:var(--muted);padding:4px 10px 6px;letter-spacing:.04em}
+.fxsb button{all:unset;cursor:pointer;display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:7px;color:var(--fg);box-sizing:border-box}
+.fxsb button:hover{background:rgba(52,25,26,.06)}
+.fxsb button[aria-current="true"]{background:rgba(52,25,26,.13);font-weight:600}
+.fxsb .ic{width:16px;height:13px;border-radius:2px 3px 3px 3px;background:linear-gradient(#8DC5E9,#4A90C5);flex:none;position:relative}
+.fxsb .ic::before{content:"";position:absolute;left:0;top:-3px;width:7px;height:4px;border-radius:2px 2px 0 0;background:#4A90C5}
+.fxmain{display:flex;flex-direction:column;min-width:0}
+.fxbar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px;min-height:44px}
+.fxbar .back{all:unset;cursor:pointer;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:17px;line-height:1}
+.fxbar .back:hover:not([disabled]){background:rgba(52,25,26,.1)}
+.fxbar .back[disabled]{opacity:.3;cursor:default}
+html[lang="fa"] .fxbar .back{transform:scaleX(-1)}
+.fxbar .crumb{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fxbar .crumb b{color:var(--fg);font-weight:600}
+.fxgrid{flex:1;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:22px 16px;padding:22px 20px;align-content:start;overflow:auto}
+.fxgrid.vid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.fxt{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;text-decoration:none;color:inherit;min-width:0;border-radius:10px;padding:8px 6px}
+a.fxt:hover,button.fxt:hover{background:rgba(52,25,26,.06)}
+.fxt>a.fxt{width:100%}
+.fxt .th{width:100%;margin-inline:auto;position:relative;overflow:hidden;border-radius:5px;background:#1d1a19;box-shadow:0 6px 14px rgba(52,25,26,.25)}
+.fxt .th img,.fxt .th video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.th.r916{aspect-ratio:9/16;max-width:150px}
+.th.r169{aspect-ratio:16/9}
+.th.r45{aspect-ratio:4/5;max-width:190px}
+.fxt .th .pl2{position:absolute;inset:0;margin:auto;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;display:grid;place-items:center;font-size:11px;border:1px solid rgba(255,255,255,.6)}
+.fxt .nm{font-size:13.5px;font-weight:600;line-height:1.3;overflow-wrap:anywhere}
+.fxt .sb2{font-size:12px;color:var(--muted);line-height:1.35}
+.fxt .ds{font-size:12px;color:var(--muted);line-height:1.45;max-width:26em}
+.fxt .f3d{--w:clamp(88px,10vw,120px);margin-top:6px}
+.fxstat{padding:8px 14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);text-align:center}
+.fxnote{grid-column:1/-1;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.fxz{font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+
+/* floating window in hero */
+.fxscrim{position:absolute;inset:0;background:rgba(52,25,26,.28);z-index:20;opacity:0;pointer-events:none;transition:opacity .35s}
+.fxscrim.on{opacity:1;pointer-events:auto}
+.fxwin{position:absolute;left:50%;top:53%;transform:translate(-50%,-50%);width:min(86%,820px);height:min(82%,520px);z-index:21;display:flex;flex-direction:column;
+  border-radius:14px;overflow:hidden;box-shadow:0 30px 70px -10px rgba(0,0,0,.55);--bg:#F5EFE4;--surface:#EDE5D6;--line:rgba(52,25,26,.18);--fg:#34191A;--muted:#7A645E;--accent:#B4584A;
+  background:var(--bg);color:var(--fg);font-family:var(--body);direction:ltr;opacity:0;pointer-events:none;transform:translate(-50%,-46%) scale(.94);transition:opacity .3s,transform .45s var(--ease)}
+.fxwin.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+.fxwin.moved{transform:none!important}
+.fxwin .tb{cursor:grab;flex:none;touch-action:none}
+.fxwin .tb:active{cursor:grabbing}
+.fxwin .fin{flex:1;min-height:0;grid-template-rows:minmax(0,1fr)}
+.fxwin .fxmain{min-height:0}
+.fxwin .fxgrid{min-height:0}
+@media (max-width:760px){
+  .fxscrim{position:fixed}
+  .fxwin{position:fixed;left:10px;right:10px;top:10px;bottom:10px;width:auto;height:auto;transform:translateY(20px) scale(.97)}
+  .fxwin.on{transform:none}
+  .fxwin.moved{transform:none!important}
+  .fin{grid-template-columns:1fr;min-height:0}
+  .fxsb{flex-direction:row;overflow:auto;padding:8px;border-inline-end:0;border-bottom:1px solid var(--line)}
+  .fxsb .h{display:none}
+  .fxsb button{white-space:nowrap}
+  .fxgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px;padding:16px 12px}
+  .fxgrid.vid{grid-template-columns:1fr}
+  .fxt .ds{display:none}
+}
 </style>
 </head>
 <body>
@@ -213,6 +414,14 @@ html[lang="fa"] .contact h2{text-transform:none;font-weight:700;font-size:clamp(
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="roshan" viewBox="0 0 554 324"><path fill="currentColor" fill-rule="evenodd" d="M264.25,318.51 L259.25,318.50 L257.00,317.92 L255.76,317.00 L255.04,315.50 L255.05,313.75 L255.75,311.80 L257.00,310.07 L264.29,302.75 L276.75,291.47 L307.70,266.25 L317.48,258.00 L323.90,252.25 L327.57,248.50 L330.37,244.75 L332.80,240.50 L334.69,235.75 L336.27,229.25 L336.78,224.25 L336.47,218.75 L335.44,213.75 L334.50,210.81 L333.00,207.30 L330.26,202.50 L325.45,195.75 L321.00,190.46 L319.48,188.25 L318.75,186.00 L318.63,182.50 L318.93,180.00 L319.95,176.00 L324.62,159.25 L331.60,132.75 L342.54,86.75 L345.51,72.50 L348.61,55.75 L348.92,51.75 L348.58,49.25 L347.50,48.11 L346.00,47.91 L344.50,48.37 L342.00,49.83 L334.50,55.02 L327.25,60.70 L323.50,64.00 L318.70,68.75 L310.94,77.75 L301.37,90.25 L285.84,111.00 L279.18,120.50 L277.52,123.25 L276.12,126.25 L275.03,130.25 L274.83,136.00 L275.18,138.75 L277.18,144.75 L284.75,160.25 L285.85,163.75 L285.75,166.00 L284.67,169.75 L283.25,172.93 L282.00,174.12 L280.75,174.01 L279.75,172.93 L273.00,159.75 L264.00,141.06 L247.99,106.50 L247.04,103.50 L246.91,101.50 L247.67,98.75 L249.00,96.84 L250.50,95.68 L281.50,76.04 L347.50,31.98 L349.50,30.80 L350.75,30.36 L352.25,30.30 L353.50,30.68 L354.75,31.78 L355.90,34.00 L356.34,36.25 L356.52,39.75 L354.32,116.50 L353.88,138.75 L353.17,157.25 L353.33,164.25 L354.03,166.75 L355.00,168.41 L356.50,169.67 L358.25,170.28 L373.00,168.55 L375.25,167.68 L377.09,166.25 L378.64,164.00 L379.69,161.00 L380.15,157.50 L382.44,104.00 L382.90,88.00 L385.77,25.25 L385.82,19.50 L386.20,15.25 L386.68,12.75 L387.50,10.35 L388.75,8.28 L390.61,6.75 L392.25,6.14 L406.00,6.03 L410.75,6.85 L413.25,7.78 L415.00,8.78 L416.77,10.50 L418.50,13.32 L419.28,15.25 L420.17,18.75 L425.48,63.50 L431.37,106.75 L439.44,162.25 L452.43,243.00 L453.36,247.00 L454.14,249.00 L455.45,250.50 L456.75,250.75 L457.50,250.33 L458.10,249.50 L458.93,246.25 L459.08,243.00 L458.69,237.25 L455.72,207.75 L451.17,169.25 L449.01,149.00 L448.17,137.50 L447.43,121.25 L447.26,113.25 L447.42,101.75 L448.19,85.25 L449.10,76.00 L450.12,70.50 L450.75,68.60 L452.00,66.58 L452.75,65.98 L453.75,65.60 L455.75,65.73 L457.98,67.00 L459.95,69.00 L462.36,72.25 L469.02,83.00 L473.88,91.50 L482.86,108.75 L521.58,188.75 L524.00,192.87 L525.00,193.64 L525.75,193.61 L526.59,192.50 L526.83,190.50 L525.75,180.00 L518.79,128.75 L514.85,101.75 L509.87,70.00 L507.10,54.25 L506.63,50.25 L506.73,48.25 L507.15,46.25 L508.00,44.66 L509.28,43.50 L511.00,42.75 L543.50,36.82 L545.50,37.04 L547.45,38.25 L548.13,39.25 L548.70,41.00 L549.13,45.25 L548.61,278.00 L548.18,291.50 L547.37,295.25 L546.36,297.00 L545.00,297.69 L544.25,297.59 L543.25,297.05 L541.47,295.25 L538.24,291.00 L534.40,285.25 L529.61,277.25 L524.31,266.75 L517.48,251.25 L504.32,219.75 L486.34,172.50 L474.79,141.25 L471.38,133.75 L470.25,132.22 L469.00,131.65 L468.25,131.92 L467.54,132.75 L466.79,136.00 L466.74,142.00 L467.52,151.00 L469.50,166.75 L472.46,184.75 L481.07,231.00 L487.85,269.00 L488.03,272.25 L487.79,274.75 L486.86,277.50 L485.50,279.25 L482.50,281.00 L477.25,282.99 L456.00,292.03 L444.00,296.81 L442.00,297.36 L440.00,297.46 L438.25,297.27 L437.11,296.75 L435.53,295.25 L434.53,293.50 L433.93,291.75 L433.29,288.50 L431.04,250.50 L430.65,239.25 L429.93,232.75 L428.91,229.50 L427.50,227.69 L425.25,226.62 L422.75,226.41 L420.25,225.89 L417.00,225.85 L414.00,225.36 L410.75,225.20 L408.50,224.73 L405.25,224.70 L401.00,224.16 L399.50,224.71 L398.25,225.92 L397.40,227.75 L397.08,229.75 L397.42,244.00 L398.48,266.00 L398.44,271.00 L397.75,274.09 L396.86,275.75 L395.73,277.00 L379.75,290.03 L376.50,292.38 L374.75,293.32 L373.25,293.55 L372.00,293.02 L371.07,292.00 L370.41,290.50 L369.94,287.50 L369.91,285.25 L373.53,246.75 L377.50,200.75 L377.39,196.00 L376.87,193.50 L375.93,191.50 L374.75,190.01 L373.25,189.06 L371.50,188.71 L366.25,188.69 L360.25,189.28 L357.00,190.31 L355.97,191.00 L355.07,192.00 L354.18,193.50 L353.41,195.50 L352.86,199.50 L352.41,230.25 L352.09,300.50 L351.86,303.25 L351.11,306.75 L350.09,309.50 L349.37,310.75 L347.40,312.75 L345.25,313.93 L343.25,314.49 L337.75,315.12 L330.25,315.23 L324.75,315.80 L319.00,315.72 L314.25,316.36 L307.50,316.34 L301.00,317.00 L295.00,316.85 L290.50,317.54 L284.25,317.44 L277.75,318.11 L268.25,318.20 L264.25,318.51Z M136.25,305.27 L135.25,305.42 L133.75,305.26 L129.00,303.83 L111.75,296.86 L97.76,290.50 L91.64,287.00 L86.50,283.23 L82.50,279.57 L78.89,275.25 L75.94,271.00 L73.22,266.00 L71.81,263.00 L69.75,257.60 L66.65,246.25 L59.09,208.25 L57.89,204.75 L56.75,202.41 L55.50,200.73 L53.75,199.27 L52.50,198.77 L50.75,198.61 L49.25,198.85 L47.75,199.52 L46.50,200.53 L45.25,202.12 L44.34,203.75 L43.71,205.50 L42.97,209.00 L42.94,215.25 L44.13,233.25 L44.07,238.25 L43.78,240.75 L43.29,242.50 L42.49,244.00 L41.50,244.95 L40.50,245.34 L39.50,245.39 L37.00,244.67 L20.50,235.62 L16.00,232.83 L13.50,230.95 L11.42,228.75 L9.96,226.25 L8.93,222.75 L8.36,219.50 L6.78,203.25 L6.01,191.50 L5.38,170.50 L5.63,158.75 L6.03,152.25 L7.87,132.50 L13.59,78.25 L15.52,63.00 L17.57,52.00 L19.49,45.00 L21.69,40.00 L24.00,36.74 L26.00,34.77 L28.25,33.09 L30.25,31.97 L33.00,30.87 L37.17,29.75 L40.50,29.20 L46.50,29.16 L61.00,30.88 L68.75,32.09 L77.75,33.94 L82.50,35.41 L86.50,37.12 L91.25,39.66 L94.94,42.25 L98.00,44.86 L101.50,48.38 L106.75,54.90 L111.34,62.75 L114.52,69.75 L117.53,77.75 L120.67,89.00 L122.43,98.50 L123.47,111.00 L123.69,112.25 L124.00,112.73 L124.50,112.62 L125.25,111.66 L128.00,106.01 L131.15,100.50 L134.00,96.44 L136.73,93.25 L139.25,90.73 L144.00,86.98 L148.00,84.65 L152.00,82.85 L155.25,81.83 L159.75,81.04 L162.75,81.09 L167.50,81.86 L171.23,83.00 L175.50,84.99 L178.50,86.77 L182.84,90.00 L185.79,92.75 L189.84,97.25 L193.37,102.25 L196.63,107.75 L199.50,113.59 L201.68,118.75 L204.76,127.75 L206.76,134.75 L209.18,147.00 L209.92,152.00 L210.80,161.50 L210.95,170.75 L210.78,177.75 L209.89,186.00 L208.71,193.50 L208.69,194.25 L209.00,194.68 L209.75,194.26 L210.50,193.24 L212.29,189.25 L214.50,181.96 L216.41,173.50 L217.55,165.00 L217.96,158.50 L217.61,146.00 L217.17,141.75 L216.32,135.75 L214.52,126.75 L213.33,122.25 L210.39,113.25 L208.25,107.81 L205.25,101.35 L201.99,95.00 L193.71,80.25 L192.76,77.50 L192.82,75.00 L193.40,73.50 L194.50,72.08 L195.75,71.25 L197.25,70.73 L223.00,64.55 L237.50,60.70 L239.00,60.60 L240.25,61.13 L241.63,62.75 L242.33,65.75 L242.34,67.75 L241.70,74.50 L234.83,128.75 L226.25,189.98 L225.16,199.50 L224.93,205.00 L225.25,205.87 L226.00,206.30 L226.75,205.98 L227.50,205.02 L251.25,158.89 L253.25,155.92 L254.25,155.30 L255.25,155.21 L256.25,155.68 L257.13,156.75 L258.53,160.50 L270.26,209.25 L271.09,211.50 L271.73,212.25 L272.25,212.48 L273.25,212.19 L273.95,211.25 L277.68,202.75 L292.55,167.25 L294.50,162.12 L295.31,158.50 L295.36,156.50 L294.62,153.25 L289.09,140.50 L287.65,136.50 L287.21,134.25 L287.19,132.50 L287.67,129.75 L288.25,128.07 L289.55,126.00 L292.42,122.50 L311.75,100.36 L331.00,79.36 L335.50,75.10 L336.75,74.66 L338.00,75.06 L338.61,76.00 L338.79,77.25 L338.63,79.50 L338.09,82.00 L328.85,116.25 L322.85,137.50 L307.75,185.85 L295.77,222.75 L293.89,228.00 L290.75,234.05 L288.79,236.75 L286.25,239.55 L273.00,251.59 L265.75,257.44 L263.50,258.89 L262.00,259.02 L260.67,258.25 L259.88,257.00 L259.25,254.50 L258.81,251.00 L257.60,233.50 L255.02,205.50 L254.65,199.00 L253.68,191.00 L253.25,189.82 L252.50,189.08 L251.75,188.96 L251.00,189.34 L249.78,191.25 L223.14,252.50 L217.33,266.50 L215.98,268.50 L215.00,269.22 L214.00,269.48 L212.75,269.08 L211.42,267.75 L208.94,262.50 L202.81,245.75 L198.92,234.00 L196.45,225.25 L196.00,224.50 L195.50,224.37 L194.75,224.86 L188.90,232.50 L182.75,238.42 L176.89,242.50 L169.50,246.07 L164.75,247.54 L161.75,248.16 L154.50,248.85 L147.50,248.18 L144.00,247.49 L139.25,246.11 L135.50,244.54 L130.50,241.80 L127.75,239.96 L123.00,236.13 L118.50,231.69 L115.99,228.75 L113.34,225.25 L107.75,216.63 L102.71,206.50 L100.75,201.73 L98.70,195.75 L96.72,188.75 L95.63,183.75 L94.69,177.25 L94.35,172.00 L94.00,171.01 L93.50,170.90 L92.50,171.41 L87.50,175.26 L83.83,178.50 L81.25,181.22 L79.43,183.75 L77.91,186.50 L76.90,189.25 L76.28,192.25 L76.13,195.00 L76.34,198.00 L77.00,201.17 L78.22,204.75 L80.84,209.75 L84.00,214.01 L86.50,216.82 L90.64,220.75 L94.77,224.00 L100.75,227.90 L114.50,235.49 L116.51,237.25 L118.50,240.11 L120.50,244.50 L126.40,261.50 L133.50,282.54 L137.58,295.75 L138.47,299.50 L138.48,302.00 L137.62,304.25 L136.25,305.27Z M50.58,148.50 L52.00,148.33 L53.25,147.89 L56.50,146.01 L62.00,141.63 L69.94,134.50 L73.00,131.25 L75.79,127.50 L77.38,124.50 L78.57,121.00 L79.43,116.00 L79.43,104.50 L79.71,97.25 L79.27,92.50 L78.15,89.00 L76.00,85.68 L73.25,83.18 L69.50,80.94 L68.85,80.25 L68.84,79.25 L69.72,77.25 L70.01,76.00 L69.84,75.00 L69.25,74.43 L68.25,74.55 L65.75,76.02 L62.75,76.54 L59.50,77.57 L57.50,77.71 L52.75,77.14 L51.25,77.38 L49.50,78.04 L47.25,79.56 L45.62,81.50 L44.14,84.25 L43.18,87.25 L42.67,91.00 L42.44,106.75 L42.71,125.50 L43.25,138.00 L43.93,142.25 L45.40,145.75 L46.51,147.00 L47.86,148.00 L49.00,148.41 L50.58,148.50Z M406.58,163.75 L420.00,160.54 L421.17,159.75 L422.02,158.75 L422.67,157.50 L423.02,156.00 L423.17,153.50 L422.75,148.98 L417.72,113.75 L416.76,109.00 L416.10,107.00 L415.25,105.53 L414.25,105.02 L413.25,105.37 L412.41,106.50 L411.44,109.00 L410.51,112.75 L407.41,128.50 L402.39,156.75 L402.29,160.00 L402.99,162.25 L403.61,163.00 L404.50,163.56 L406.58,163.75Z M94.75,169.50 L96.00,168.84 L99.25,166.16 L105.26,160.50 L110.57,154.00 L115.08,146.75 L118.31,139.50 L121.30,129.50 L123.33,118.25 L123.31,116.50 L122.75,115.78 L121.50,116.09 L118.50,117.99 L114.50,120.94 L111.50,123.75 L108.25,127.37 L105.63,130.75 L101.25,137.78 L99.48,141.50 L98.03,145.25 L95.88,152.50 L94.92,157.50 L94.01,165.75 L94.09,168.75 L94.27,169.25 L94.75,169.50Z M156.31,209.50 L158.75,209.31 L161.25,208.64 L165.00,206.83 L168.50,204.02 L171.91,199.75 L173.91,196.25 L175.25,193.37 L177.21,187.75 L178.44,182.50 L179.36,174.75 L179.33,167.25 L178.36,159.75 L176.40,152.25 L174.04,146.50 L170.50,140.80 L167.00,137.14 L165.00,135.70 L163.00,134.65 L160.75,133.95 L158.75,133.69 L156.50,133.76 L154.75,134.14 L152.25,135.19 L150.00,136.50 L147.75,138.31 L145.50,140.58 L143.72,142.75 L141.89,145.50 L139.20,151.00 L137.08,157.50 L135.99,163.25 L135.29,172.00 L135.95,180.75 L137.00,186.50 L138.96,193.00 L141.01,197.50 L144.25,202.53 L148.00,206.23 L152.00,208.47 L154.75,209.42 L156.31,209.50Z M231.00,309.26 L229.50,309.26 L228.25,308.92 L227.37,308.25 L226.68,307.25 L225.80,304.25 L225.95,300.00 L227.89,290.00 L236.92,253.50 L240.00,243.85 L241.01,241.25 L242.00,239.54 L243.00,238.68 L244.20,238.75 L245.09,239.75 L245.75,241.50 L246.51,248.50 L247.47,265.00 L248.35,270.75 L249.13,272.75 L250.12,274.25 L251.00,275.03 L252.00,275.49 L253.25,275.62 L254.50,275.41 L256.75,274.68 L261.00,272.83 L266.75,269.90 L274.25,265.62 L279.43,262.25 L283.75,259.19 L288.00,255.78 L295.25,249.50 L300.75,244.07 L305.36,238.75 L307.57,235.75 L309.30,232.75 L310.49,229.75 L311.23,226.50 L311.48,224.00 L311.33,221.00 L310.71,217.50 L308.25,208.50 L308.07,206.50 L308.23,204.50 L308.91,201.75 L309.89,200.25 L311.25,199.62 L312.75,200.23 L314.25,202.00 L319.75,210.93 L323.56,218.75 L324.94,223.00 L325.52,227.50 L325.10,231.75 L323.75,235.58 L321.75,238.92 L315.72,245.50 L308.50,252.37 L290.50,268.06 L282.00,274.80 L261.00,289.91 L241.25,303.46 L233.50,308.41 L232.25,309.00 L231.00,309.26Z"/></symbol></svg>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="fg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8CC4E8"/><stop offset="1" stop-color="#4D93C6"/></linearGradient>
+<linearGradient id="fg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FA6D6"/><stop offset="1" stop-color="#3F86BC"/></linearGradient>
+<symbol id="folder" viewBox="0 0 120 96"><path d="M6 12 Q6 6 12 6 H42 Q46 6 49 9 L55 15 H108 Q114 15 114 21 V84 Q114 90 108 90 H12 Q6 90 6 84 Z" fill="url(#fg2)"/>
+<path d="M6 30 Q6 24 12 24 H108 Q114 24 114 30 V84 Q114 90 108 90 H12 Q6 90 6 84 Z" fill="url(#fg1)"/><path d="M6 30 Q6 24 12 24 H108 Q114 24 114 30" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.6"/></symbol>
+<symbol id="cursor" viewBox="0 0 26 36"><path d="M3 2 V28 L9.6 22 L14.4 33.4 L19.4 31.2 L14.6 20 L23.4 19.6 Z" fill="#fff" stroke="#111" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+<symbol id="flower" viewBox="0 0 100 100"><g stroke-linecap="round"><g stroke="#fff" stroke-width="30"><path d="M50 14 V86"/><path d="M19 32 L81 68"/><path d="M19 68 L81 32"/></g><g stroke="#34191A" stroke-width="17"><path d="M50 14 V86"/><path d="M19 32 L81 68"/><path d="M19 68 L81 32"/></g></g></symbol>
+</defs></svg>
 <header class="bar">
   <div class="wrap">
     <svg class="mark" viewBox="0 0 554 324" role="img" aria-label="ROSHAN"><use href="#roshan"/></svg>
@@ -227,24 +436,37 @@ html[lang="fa"] .contact h2{text-transform:none;font-weight:700;font-size:clamp(
 
 <main class="wrap">
   <div class="hero">
-    <div class="frame">
-      <span class="lb t"></span><span class="lb b"></span>
-      <svg class="mark" viewBox="0 0 554 324" role="img" aria-label="ROSHAN"><use href="#roshan"/></svg>
-      <div class="hud"><span>A001 · 2.39:1 · 24FPS</span><span class="tc" id="tc">00:00:00:00</span></div>
-    </div>
-    <div class="intro">
-      <div>
-        <div class="label" data-i="eyebrow" style="margin-bottom:14px">Video Editor · Motion · Art Director</div>
-        <h1><span class="rv" data-i="h1" data-html>I'm <em>Amin Roshandel</em>.</span></h1>
+    <h1 class="sr"><span data-i="h1" data-html>I'm <em>Amin Roshandel</em>.</span></h1>
+    <div class="desk" id="desk">
+      <div class="menu"><a href="#work" data-i="mWork">work</a><span class="mid">ROWSHAN</span><a href="#work" data-open="social" data-i="mSocial">social media</a></div>
+
+      <button class="it" data-open="work" style="--x:17%;--y:31%;--mx:20%;--my:19%"><span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span><span data-i="fWork">work</span></button>
+      <span class="it dn" style="--x:35%;--y:20%;--mx:42%;--my:11%"><span class="app pr">Pr</span></span>
+      <button class="it" data-open="social" style="--x:69%;--y:21%;--mx:80%;--my:19%"><img class="thumbf" src="ig-ad.jpg" alt="" loading="lazy"><span>ig-ad.jpg</span></button>
+      <button class="it dn" data-open="social" style="--x:84%;--y:28%;--mx:80%;--my:36%"><span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span><span data-i="fSocial">social media</span></button>
+      <span class="it dn" style="--x:87%;--y:55%"><span class="app ae">Ae</span></span>
+
+      <button class="it" data-open="social" style="--x:13%;--y:71%;--mx:20%;--my:80%"><img class="thumbf" src="fashion.jpg" alt="" loading="lazy"><span>fashion.jpg</span></button>
+      <a class="it" href="#case-sec" style="--x:34%;--y:75%;--mx:80%;--my:81%"><span class="app pl">▶</span><span data-i="fReel">showreel</span></a>
+      <button class="it dn" data-open="film" style="--x:27%;--y:91%"><span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span><span data-i="fFilm">film</span></button>
+      <button class="it dn" data-open="social" style="--x:83%;--y:78%"><img class="thumbf" src="haircut.jpg" alt="" loading="lazy"><span>haircut.jpg</span></button>
+      <button class="it dn" data-open="film" style="--x:68%;--y:90%"><img class="thumbf w" src="music-video.jpg" alt="" loading="lazy"><span>music-video.jpg</span></button>
+
+      <div class="center">
+        <button class="bigfolder" data-open="work" aria-label="work" style="position:absolute;left:50%;top:50%;width:21%;transform:translate(-50%,-30%)"><span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span></button>
+        <span class="scr" data-i="deskScript" aria-hidden="true">editor</span>
+        <svg class="mark" viewBox="0 0 554 324" role="img" aria-label="ROWSHAN"><use href="#roshan"/></svg>
       </div>
-      <div>
-        <p class="lede" data-i="lede"></p>
-        <div class="ctas">
-          <a class="btn primary pending" href="#" aria-disabled="true" data-i="ctaReel">▶ Showreel</a>
-          <a class="btn" href="#contact" data-i="ctaContact">Contact</a>
-        </div>
+      <span class="year" data-i="deskYear">(2026)</span>
+      <svg class="cur" viewBox="0 0 26 36" aria-hidden="true"><use href="#cursor"/></svg>
+
+      <div class="fxscrim" id="fxscrim"></div>
+      <div class="fxwin" id="fxwin" role="dialog" aria-modal="true" aria-label="Finder">
+        <div class="tb" id="fxtb"><button class="tl r" id="fxclose" aria-label="Close"></button><span class="tl y"></span><span class="tl g"></span><span class="ttl" id="fxttl">ROWSHAN</span></div>
+        <div class="fin" id="fin-float"></div>
       </div>
     </div>
+    <div class="label" style="display:flex;justify-content:space-between;margin-top:12px;direction:ltr"><span>A001 · 2.39:1 · 24FPS</span><span class="tc" id="tc">00:00:00:00</span></div>
   </div>
 
   <div class="credits fade">
@@ -254,33 +476,54 @@ html[lang="fa"] .contact h2{text-transform:none;font-weight:700;font-size:clamp(
     <div class="credit"><strong data-i="s4n">Studio</strong><span data-i="s4"></span></div>
   </div>
 
-  <section id="work">
-    <div class="sec-head"><h2><span class="rv" data-i="workT">Selected work</span></h2><span class="label" data-i="workS"></span></div>
-    <div class="sub"><span class="label" data-i="gSocial">Social & brand</span><span class="label">9:16</span></div>
-    <div class="reels social" id="social"></div>
-    <div class="sub"><span class="label" data-i="gProd">Product ads · Animation & AI</span><span class="label">4:5</span></div>
-    <div class="prod">
-      <figure class="pv fade"><video src="jelly-moon.mp4" poster="jelly-moon.jpg" autoplay muted loop playsinline preload="metadata"></video>
-        <figcaption><span class="no">AD 01</span><h3 data-i="p1">Jelly Moon · Launch spot</h3><p data-i="p1d"></p></figcaption></figure>
-      <figure class="pv fade"><video src="burger.mp4" poster="burger.jpg" autoplay muted loop playsinline preload="metadata"></video>
-        <figcaption><span class="no">AD 02</span><h3 data-i="p2">Stacked · Product build</h3><p data-i="p2d"></p></figcaption></figure>
-      <div class="pnote fade"><span class="label" data-i="pnL">Pipeline</span><p data-i="pn"></p></div>
+    <section id="about" class="about">
+    <div class="acard fade">
+      <div class="aphoto">
+        <div class="frame2"><img src="portrait.jpg" alt="" onerror="this.remove()"><svg class="mark" viewBox="0 0 554 324" aria-hidden="true"><use href="#roshan"/></svg></div>
+        <span class="tag" data-i="aTag">about me</span>
+        <svg class="sticker" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      </div>
+      <div class="atxt">
+        <h2 class="hi" data-i="aHi">Hi, I'm Amin!</h2>
+        <p data-i="lede"></p>
+        <p class="spec" data-i="aSpec">What I specialize in:</p>
+        <ul class="slist">
+          <li><span><b data-i="sp1b"></b> <span data-i="sp1"></span></span></li>
+          <li><span><b data-i="sp2b"></b> <span data-i="sp2"></span></span></li>
+          <li><span><b data-i="sp3b"></b> <span data-i="sp3"></span></span></li>
+        </ul>
+        <div class="ctas">
+          <a class="btn primary pending" href="#" aria-disabled="true" data-i="ctaReel">▶ Showreel</a>
+          <a class="btn" href="#contact" data-i="ctaContact">Contact</a>
+        </div>
+      </div>
+      <div class="acols">
+        <div><h3 data-i="aExp">Experience</h3><ul>
+          <li><b data-i="e1a"></b><small data-i="e1b"></small></li>
+          <li><b data-i="e2a"></b><small data-i="e2b"></small></li></ul></div>
+        <div><h3 data-i="aSk">Skills</h3><ul>
+          <li>Premiere Pro</li><li>After Effects</li><li data-i="k3"></li><li data-i="k4"></li><li data-i="k5"></li></ul></div>
+        <div><h3 data-i="aCo">Contacts</h3><ul>
+          <li><a href="mailto:aminroshandel25@gmail.com"><span class="ci">@</span>aminroshandel25@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/iaintrowshan/" target="_blank" rel="noopener"><span class="ci">IG</span>iaintrowshan</a></li>
+          <li><a href="https://youtube.com/@iaintroshan" target="_blank" rel="noopener"><span class="ci">YT</span>iaintroshan</a></li></ul></div>
+      </div>
     </div>
-    <div class="sub"><span class="label" data-i="gFilm">Film & music</span><span class="label">16:9</span></div>
-    <div class="reels" id="film"></div>
   </section>
 
-  <section id="skills-sec">
+  <section id="work" class="win"><div class="tb"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">ROWSHAN › <span data-i="fWork"></span></span></div><div class="fin" id="fin-main"></div></section>
+
+  <section id="skills-sec" class="win"><div class="tb"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">ROWSHAN › <span data-i="skillT"></span></span></div>
     <div class="sec-head"><h2><span class="rv" data-i="skillT"></span></h2><span class="label" data-i="skillS"></span></div>
     <div class="skills" id="skills"></div>
   </section>
 
-  <section id="case-sec">
+  <section id="case-sec" class="win"><div class="tb"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">ROWSHAN › <span data-i="caseT"></span></span></div>
     <div class="sec-head"><h2><span class="rv" data-i="caseT"></span></h2><span class="label" data-i="caseS"></span></div>
     <div class="case fade">
-      <div class="phone"><video src="one-second.mp4" poster="one-second.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div>
+      <div class="phone" aria-hidden="true"><svg class="mark" viewBox="0 0 554 324"><use href="#roshan"/></svg><span>9:16 · 00:30</span></div>
       <div>
-        <h3 data-i="caseH">One Second</h3>
+        <h3 data-i="caseH"></h3>
         <p data-i="caseP"></p>
         <ul class="steps">
           <li><b>01</b><span data-i="st1"></span></li>
@@ -292,7 +535,7 @@ html[lang="fa"] .contact h2{text-transform:none;font-weight:700;font-size:clamp(
     </div>
   </section>
 
-  <section id="tools-sec">
+  <section id="tools-sec" class="win"><div class="tb"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">ROWSHAN › <span data-i="toolT"></span></span></div>
     <div class="sec-head"><h2><span class="rv" data-i="toolT"></span></h2></div>
     <div class="tools">
       <div class="tool">Adobe Premiere Pro<small data-i="t1"></small></div>
@@ -301,7 +544,7 @@ html[lang="fa"] .contact h2{text-transform:none;font-weight:700;font-size:clamp(
     </div>
   </section>
 
-  <div class="contact" id="contact">
+  <div class="contact win" id="contact"><div class="tb"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">ROWSHAN › <span data-i="cWin"></span></span></div>
     <h2><span class="rv" data-i="cT" data-html></span></h2>
     <div>
       <div class="label" data-i="cL" style="margin-bottom:8px">Email</div>
@@ -320,27 +563,41 @@ html[lang="fa"] .contact h2{text-transform:none;font-weight:700;font-size:clamp(
 
 <script>
 const T={
-en:{vEdit:"Edit",vFull:"Full",eyebrow:"Video Editor · Motion · Art Director",
+en:{fFav:"Favorites",fItems:"items",fItem:"item",fBack:"Back",cWin:"contact",mWork:"work",mSocial:"social media",fWork:"work",fSocial:"social media",fFilm:"film",fReel:"showreel",deskScript:"editor",deskYear:"(2026)",
+aTag:"about me",aHi:"Hi, I'm Amin!",aSpec:"What I specialize in:",
+sp1b:"Editing —",sp1:"pacing and structure for music videos, short films, fashion and brand reels",
+sp2b:"Motion graphics —",sp2:"titles, 3D-style infographics and product ads, code-driven and AI-assisted",
+sp3b:"Art direction —",sp3:"concept, set, color and look before the camera rolls",
+aExp:"Experience",e1a:"4+ years",e1b:"Video editor & motion designer",e2a:"Ongoing",e2b:"Art director, studio",
+aSk:"Skills",k3:"Motion graphics",k4:"Brand identity",k5:"AI-assisted automation",aCo:"Contacts",
+vEdit:"Edit",vFull:"Full",eyebrow:"Video Editor · Motion · Art Director",
 h1:"I'm <em>Amin Roshandel</em>.",
 lede:"Video editor, motion designer and art director with four years of work across music videos, short films, performance art, fashion and product ads. I shape every project around what it needs and around the identity of the brand behind it, from the rhythm of the edit and the color to the type and motion.",
 s1n:"4+",s1:"years of professional work",s2n:"6",s2:"video formats",s3:"Premiere Pro & After Effects",s4n:"Studio",s4:"art director, ongoing",
 workT:"Selected work",workS:"9 pieces",gSocial:"Social & brand",gProd:"Product ads · Animation & AI",p1:"Jelly Moon · Launch spot",p1d:"Packaging hero shot and a burst of jelly beans, timed to land the brand name.",p2:"Stacked · Product build",p2d:"An ingredient-by-ingredient build on a retro sunburst, made for a looping social ad.",pnL:"Pipeline",pn:"AI-generated product animation, directed shot by shot, then edited, timed and finished for social feeds. Fast to iterate, easy to version for each market.",teaser:"Teaser",gFilm:"Film & music",watch:"Watch",skillT:"Craft",skillS:"What I bring to a project",
-caseT:"Case study",caseS:"Self-initiated · 2026",caseH:"One Second",
-caseP:"A 30-second vertical collage spot that talks straight to brands: your post gets scrolled past in under a second. It rewinds to a raw shot, tears it open into the final edit, backs it up with real numbers, and ends the moment the feed stops on the work. Paper cut-outs boil at 12 fps while the footage plays in real time. Made in English and Persian.",
-st1:"Script and storyboard",st2:"Mixed-media collage animation",st3:"Edit, grade and sound design",st4:"English and Persian versions",
+caseT:"Case study",caseS:"In production",caseH:"Editing Sells",
+caseP:"A 30-second vertical motion piece on how editing changes the way a product looks and sells. It moves from raw footage to a graded, psychedelic finish, with the data shown as 3D infographics. Built from script to render with a code-driven, AI-assisted pipeline, in Persian and English.",
+st1:"Scenario and visual direction",st2:"Code-rendered motion, 3D infographics",st3:"Edit, pacing and grade",st4:"Persian and English deliverables",
 stillT:"Photography & Cinematography",stillS:"Behind the lens",ph1:"Fashion",ph2:"Portrait",ph3:"Music video DP",ph4:"Documentary",
 toolT:"Tools",t1:"edit · 4 years",t3:"motion & compositing",t2n:"AI-assisted automation",t2:"scripted edits & motion",
 cT:"Let's cut<br>something together.",cL:"Email",copy:"Copy",copied:"Copied",foot:"Editor · Motion · Art Director",
 dir:"Directed & edited",ed:"Edited",yt:"YouTube",ig:"Instagram"},
-fa:{vEdit:"ادیت",vFull:"کامل",eyebrow:"تدوینگر · موشن گرافیست · کارگردان هنری",
+fa:{fFav:"علاقه‌مندی‌ها",fItems:"مورد",fItem:"مورد",fBack:"بازگشت",cWin:"تماس",mWork:"نمونه‌کارها",mSocial:"سوشال مدیا",fWork:"نمونه‌کارها",fSocial:"سوشال مدیا",fFilm:"فیلم",fReel:"شوریل",deskScript:"تدوینگر",deskYear:"(۲۰۲۶)",
+aTag:"درباره من",aHi:"سلام، من امین‌ام!",aSpec:"در این کارها تخصص دارم:",
+sp1b:"تدوین —",sp1:"ریتم و ساختار برای موزیک ویدیو، فیلم کوتاه، فشن و ریل برند",
+sp2b:"موشن گرافیک —",sp2:"تیتراژ، اینفوگرافیک سه‌بعدی و تبلیغ محصول با پایپ‌لاین کدنویسی‌شده و هوش مصنوعی",
+sp3b:"کارگردانی هنری —",sp3:"کانسپت، صحنه، رنگ و فضا پیش از فیلمبرداری",
+aExp:"سوابق",e1a:"+۴ سال",e1b:"تدوینگر و موشن گرافیست",e2a:"در حال فعالیت",e2b:"کارگردان هنری، استودیو",
+aSk:"مهارت‌ها",k3:"موشن گرافیک",k4:"هویت برند",k5:"اتوماسیون با هوش مصنوعی",aCo:"تماس",
+vEdit:"ادیت",vFull:"کامل",eyebrow:"تدوینگر · موشن گرافیست · کارگردان هنری",
 h1:"من <em>امین روشندل</em> هستم.",
 lede:"تدوینگر، موشن گرافیست و کارگردان هنری با چهار سال سابقه در موزیک ویدیو، فیلم کوتاه، پرفورمنس آرت، ویدیوی فشن و تبلیغات محصول. هر پروژه را بر اساس نیاز همان پروژه و هویت برندش پیش می‌برم؛ از ریتم تدوین و رنگ تا تایپوگرافی و موشن.",
 ctaReel:"▶ شوریل",ctaContact:"تماس",
 s1n:"+۴",s1:"سال سابقه حرفه‌ای",s2n:"۶",s2:"فرمت ویدیویی",s3:"پریمیر پرو و افترافکت",s4n:"استودیو",s4:"کارگردان هنری، در حال فعالیت",
 workT:"نمونه‌کارها",workS:"۹ نمونه‌کار",gSocial:"سوشال مدیا و برند",gProd:"تبلیغات محصول · انیمیشن و هوش مصنوعی",p1:"جلی مون · تیزر معرفی",p1d:"شات اصلی بسته‌بندی و انفجار پاستیل‌ها، با زمان‌بندی‌ای که روی اسم برند فرود میاد.",p2:"لایه به لایه · ساخت محصول",p2d:"چیده شدن مواد یکی‌یکی روی پس‌زمینه رترو، برای تبلیغ لوپ‌شونده در سوشال.",pnL:"روند کار",pn:"انیمیشن محصول با هوش مصنوعی که شات به شات کارگردانی شده و بعد تدوین، زمان‌بندی و برای فید سوشال نهایی شده. سریع قابل تغییره و راحت برای هر بازار نسخه جدید می‌گیره.",teaser:"تیزر",gFilm:"فیلم و موزیک",watch:"تماشا",skillT:"مهارت‌ها",skillS:"چه چیزی به پروژه اضافه می‌کنم",
-caseT:"پروژه شاخص",caseS:"پروژه شخصی · ۱۴۰۵",caseH:"یک ثانیه",
-caseP:"یک تیزر کلاژ عمودی ۳۰ ثانیه‌ای که مستقیم با برندها حرف می‌زند: پست تو در کمتر از یک ثانیه اسکرول می‌شود. ویدیو به یک شات خام برمی‌گردد، آن را پاره می‌کند و به تدوین نهایی می‌رسد، با آمار واقعی پشتیبانی‌اش می‌کند و درست جایی تمام می‌شود که فید روی کار می‌ایستد. المان‌های کاغذی با ۱۲ فریم در ثانیه حرکت می‌کنند و فوتیج با سرعت واقعی پخش می‌شود. در دو نسخه فارسی و انگلیسی.",
-st1:"فیلمنامه و استوری‌بورد",st2:"انیمیشن کلاژ ترکیبی",st3:"تدوین، اصلاح رنگ و طراحی صدا",st4:"نسخه فارسی و انگلیسی",
+caseT:"پروژه شاخص",caseS:"در حال تولید",caseH:"ادیت می‌فروشد",
+caseP:"یک موشن عمودی ۳۰ ثانیه‌ای درباره اینکه تدوین چطور ظاهر و فروش یک محصول را تغییر می‌دهد. از فوتیج خام شروع می‌شود و به فینیشی رنگ‌شده و سایکدلیک می‌رسد و داده‌ها به شکل اینفوگرافیک سه‌بعدی نمایش داده می‌شوند. از سناریو تا رندر با پایپ‌لاین کدنویسی‌شده و کمک هوش مصنوعی، در دو نسخه فارسی و انگلیسی.",
+st1:"سناریو و جهت بصری",st2:"موشن رندرشده با کد، اینفوگرافیک سه‌بعدی",st3:"تدوین، ریتم و اصلاح رنگ",st4:"خروجی فارسی و انگلیسی",
 stillT:"عکاسی و تصویربرداری",stillS:"پشت دوربین",ph1:"فشن",ph2:"پرتره",ph3:"تصویربرداری موزیک ویدیو",ph4:"مستند",
 toolT:"ابزارها",t1:"تدوین · ۴ سال",t3:"موشن و کامپوزیت",t2n:"اتوماسیون با هوش مصنوعی",t2:"تدوین و موشن اسکریپتی",
 cT:"بیایید با هم<br>چیزی بسازیم.",cL:"ایمیل",copy:"کپی",copied:"کپی شد",foot:"تدوینگر · موشن · کارگردان هنری",
@@ -381,12 +638,11 @@ function render(){
    <h3>${n}</h3><p>${d}</p>
    <div class="meta"><span class="role">${w.dir?`<b>${t.dir}</b>`:t.ed}</span>
    <span class="lk"><span>${t.watch} · ${w.src==="yt"?t.yt:t.ig} ↗</span></span></div></a>${w.tz?`<a class="tz" href="${w.tz}" target="_blank" rel="noopener">${t.teaser} · ${t.ig} ↗</a>`:""}`};
-  document.getElementById("social").innerHTML=WORK.map((w,i)=>w.grp==="social"?card(w,i):"").join("");
-  document.getElementById("film").innerHTML=WORK.map((w,i)=>w.grp==="film"?card(w,i):"").join("");
   document.getElementById("skills").innerHTML=SKILLS.map((s,i)=>{const[n,d]=s[lang];return `<div class="sk fade"><span class="k">${pad(i+1)}</span><h3>${n}</h3><p>${d}</p></div>`}).join("");
   document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===lang));
   document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.view===view));
   document.querySelectorAll("a[aria-disabled]").forEach(a=>a.onclick=e=>e.preventDefault());
+  renderFin();
   observe();
 }
 let io;
@@ -404,7 +660,61 @@ document.getElementById("copy").onclick=async e=>{
   catch(_){const r=document.createRange();r.selectNodeContents(m);const s=getSelection();s.removeAllRanges();s.addRange(r)}
 };
 let f=0;const tc=document.getElementById("tc");
-if(!matchMedia("(prefers-reduced-motion: reduce)").matches)setInterval(()=>{f++;const s=Math.floor(f/24);tc.textContent=`00:${pad(Math.floor(s/60)%60)}:${pad(s%60)}:${pad(f%24)}`},1000/24);
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches)setInterval(()=>{if(!tc)return;f++;const s=Math.floor(f/24);tc.textContent=`00:${pad(Math.floor(s/60)%60)}:${pad(s%60)}:${pad(f%24)}`},1000/24);
+
+/* ===== Finder ===== */
+const PRODS=[{v:"jelly-moon.mp4",img:"jelly-moon.jpg",k:["p1","p1d"]},{v:"burger.mp4",img:"burger.jpg",k:["p2","p2d"]}];
+const KIDS=["social","prod","film"];
+const fname=(id,t)=>({work:t.fWork,social:t.gSocial,prod:t.gProd,film:t.gFilm})[id];
+const itemsOf=id=>id==="social"?WORK.filter(w=>w.grp==="social"):id==="film"?WORK.filter(w=>w.grp==="film"):id==="prod"?PRODS:[];
+const F3=`<span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span>`;
+const fins=[];
+class Fin{
+  constructor(el,start,onTitle){this.el=el;this.cb=onTitle;this.go(start||"work",true);fins.push(this)}
+  go(id,silent){this.path=(id==="work"||!id)?["work"]:["work",id];if(!silent)this.draw()}
+  draw(){
+    const t=T[lang],cur=this.path[this.path.length-1],nav=["work",...KIDS];
+    const sb=`<aside class="fxsb"><div class="h">${t.fFav}</div>${nav.map(n=>`<button data-go="${n}" aria-current="${n===cur}"><span class="ic"></span>${fname(n,t)}</button>`).join("")}</aside>`;
+    let grid,count;
+    if(cur==="work"){count=KIDS.length;grid=`<div class="fxgrid">${KIDS.map(k=>`<button class="fxt fxbtn" data-go="${k}">${F3}<span class="nm">${fname(k,t)}</span><span class="sb2">${itemsOf(k).length} ${t.fItems}</span></button>`).join("")}</div>`}
+    else if(cur==="prod"){count=PRODS.length;grid=`<div class="fxgrid vid">${PRODS.map(p=>`<div class="fxt"><div class="th r45"><video src="${p.v}" poster="${p.img}" autoplay muted loop playsinline preload="metadata"></video></div><span class="nm">${t[p.k[0]]}</span><span class="ds">${t[p.k[1]]}</span></div>`).join("")}<p class="fxnote"><b>${t.pnL}</b> — ${t.pn}</p></div>`}
+    else{const its=itemsOf(cur);count=its.length;const r=cur==="social"?"r916":"r169";
+      grid=`<div class="fxgrid ${cur==="film"?"vid":""}">${its.map(w=>{const[n,d]=w[lang];return `<div class="fxt"><a class="fxt" style="padding:0" href="${w.url}" target="_blank" rel="noopener"><div class="th ${r}"><img src="${w.img}" alt="" loading="lazy"><span class="pl2">▶</span></div><span class="nm">${n}</span></a><span class="sb2">${w.dir?t.dir:t.ed} · ${w.src==="yt"?t.yt:t.ig} ↗</span><span class="ds">${d}</span>${w.tz?`<a class="fxz" href="${w.tz}" target="_blank" rel="noopener">${t.teaser} · ${t.ig} ↗</a>`:""}</div>`}).join("")}</div>`}
+    const crumb=this.path.map((p,i)=>i===this.path.length-1?`<b>${fname(p,t)}</b>`:fname(p,t)).join(" › ");
+    this.el.innerHTML=`${sb}<div class="fxmain"><div class="fxbar"><button class="back" ${this.path.length<2?"disabled":""} aria-label="${t.fBack}" data-go="work">‹</button><span class="crumb">ROWSHAN › ${crumb}</span></div>${grid}<div class="fxstat">${count} ${count===1?t.fItem:t.fItems}</div></div>`;
+    this.el.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{this.go(b.dataset.go);this.draw()});
+    if(this.cb)this.cb(fname(cur,t));
+  }
+}
+let finMain,finFloat;
+function renderFin(){
+  if(!finMain){finMain=new Fin(document.getElementById("fin-main"),"work");
+    finFloat=new Fin(document.getElementById("fin-float"),"work",n=>{document.getElementById("fxttl").textContent="ROWSHAN › "+n})}
+  fins.forEach(f=>f.draw());
+}
+const fxwin=document.getElementById("fxwin"),fxscrim=document.getElementById("fxscrim"),fxtb=document.getElementById("fxtb");
+function openFloat(id){
+  finFloat.go(id);finFloat.draw();
+  fxwin.classList.add("on");fxscrim.classList.add("on");
+}
+function closeFloat(){fxwin.classList.remove("on");fxscrim.classList.remove("on")}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(!b)return;e.preventDefault();openFloat(b.dataset.open)});
+document.getElementById("fxclose").onclick=closeFloat;
+fxscrim.onclick=closeFloat;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeFloat()});
+/* drag */
+let drag=null;
+fxtb.addEventListener("pointerdown",e=>{
+  if(e.target.closest("button")||matchMedia("(max-width:760px)").matches)return;
+  const d=document.getElementById("desk").getBoundingClientRect(),r=fxwin.getBoundingClientRect();
+  fxwin.classList.add("moved");fxwin.style.left=(r.left-d.left)+"px";fxwin.style.top=(r.top-d.top)+"px";
+  drag={dx:e.clientX-r.left,dy:e.clientY-r.top,d};fxtb.setPointerCapture(e.pointerId)});
+fxtb.addEventListener("pointermove",e=>{if(!drag)return;
+  const w=fxwin.offsetWidth,h=fxwin.offsetHeight;
+  fxwin.style.left=Math.max(0,Math.min(drag.d.width-w,e.clientX-drag.d.left-drag.dx))+"px";
+  fxwin.style.top=Math.max(0,Math.min(drag.d.height-h,e.clientY-drag.d.top-drag.dy))+"px"});
+fxtb.addEventListener("pointerup",()=>{drag=null});
+
 parseHash();render();
 </script>
 
