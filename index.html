@@ -426,6 +426,17 @@ html[lang="fa"] .hi{line-height:1.35!important;letter-spacing:0!important;font-s
 /* why rowshan */
 .why{display:flex;justify-content:center}
 .why video{width:min(100%,460px);aspect-ratio:4/5;display:block;border-radius:10px;background:#0000ee;box-shadow:0 16px 36px -14px rgba(52,25,26,.55)}
+
+/* ===== intro layer ===== */
+.menu button.mid{background:none;border:0;padding:0;color:inherit;font-family:inherit;font-size:inherit;font-weight:800;letter-spacing:.02em;cursor:pointer}
+.menu button.mid:hover{text-decoration:underline;text-underline-offset:4px}
+.introL{position:absolute;inset:0;z-index:30;background:#0100FC;opacity:0;pointer-events:none;transition:opacity .7s var(--ease);border-radius:inherit;overflow:hidden}
+.introL.on{opacity:1;pointer-events:auto}
+.introL video{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:760px){.introL video{object-fit:contain}}
+.introL .ctl{position:absolute;right:14px;bottom:12px;display:flex;gap:8px}
+.introL .ctl button{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:6px 14px;font:600 12px var(--body);cursor:pointer}
+.introL .ctl button:hover,.introL .ctl button[aria-pressed="true"]{background:#fff;color:#0100FC}
 </style>
 </head>
 <body>
@@ -457,7 +468,7 @@ html[lang="fa"] .hi{line-height:1.35!important;letter-spacing:0!important;font-s
   <div class="hero">
     <h1 class="sr"><span data-i="h1" data-html>I'm <em>Amin Roshandel</em>.</span></h1>
     <div class="desk" id="desk">
-      <div class="menu"><a href="#work" data-i="mWork">work</a><span class="mid">ROWSHAN</span><a href="#work" data-open="social" data-i="mSocial">social media</a></div>
+      <div class="menu"><a href="#work" data-i="mWork">work</a><button class="mid" id="replay" type="button" aria-label="Replay intro">ROWSHAN</button><a href="#work" data-open="social" data-i="mSocial">social media</a></div>
 
       <button class="it" data-open="work" style="--x:17%;--y:31%;--mx:20%;--my:19%"><span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span><span data-i="fWork">work</span></button>
       <span class="it dn" style="--x:35%;--y:20%;--mx:42%;--my:11%"><span class="app pr">Pr</span></span>
@@ -479,6 +490,7 @@ html[lang="fa"] .hi{line-height:1.35!important;letter-spacing:0!important;font-s
       <span class="year" data-i="deskYear">(2026)</span>
       <svg class="cur" viewBox="0 0 26 36" aria-hidden="true"><use href="#cursor"/></svg>
 
+      <div class="introL" id="intro"><video src="rowshan-intro.mp4" muted playsinline preload="auto"></video><div class="ctl"><button id="introSnd" type="button" aria-pressed="false" data-i="introSnd">Sound</button><button id="introSkip" type="button" data-i="introSkip">Skip</button></div></div>
       <div class="fxscrim" id="fxscrim"></div>
       <div class="fxwin" id="fxwin" role="dialog" aria-modal="true" aria-label="Finder">
         <div class="tb" id="fxtb"><button class="tl r" id="fxclose" aria-label="Close"></button><span class="tl y"></span><span class="tl g"></span><span class="ttl" id="fxttl">ROWSHAN</span></div>
@@ -561,7 +573,7 @@ html[lang="fa"] .hi{line-height:1.35!important;letter-spacing:0!important;font-s
 
 <script>
 const T={
-en:{fFav:"Favorites",fItems:"items",fItem:"item",fBack:"Back",cWin:"contact",mWork:"work",mSocial:"social media",fWork:"work",fSocial:"social media",fFilm:"film",fReel:"showreel",deskScript:"editor",deskYear:"(2026)",
+en:{fFav:"Favorites",gEdu:"Educational video",e1:"Educational video · Monjaro",e1d:"Talking-head educational video, edited for clarity and pace.",introSnd:"Sound",introSkip:"Skip",fItems:"items",fItem:"item",fBack:"Back",cWin:"contact",mWork:"work",mSocial:"social media",fWork:"work",fSocial:"social media",fFilm:"film",fReel:"showreel",deskScript:"editor",deskYear:"(2026)",
 aTag:"about me",aHi:"<span>Editor</span><span>Art Director</span><span>Cinematographer</span>",aSpec:"What I specialize in:",
 sp1b:"Editing —",sp1:"pacing and structure for music videos, short films, fashion and brand reels",
 sp2b:"Motion graphics —",sp2:"titles, 3D-style infographics and product ads, code-driven and AI-assisted",
@@ -580,7 +592,7 @@ stillT:"Photography & Cinematography",stillS:"Behind the lens",ph1:"Fashion",ph2
 toolT:"Tools",t1:"edit · 4 years",t3:"motion & compositing",t2n:"AI-assisted automation",t2:"scripted edits & motion",
 cT:"Let's cut<br>something together.",cL:"Email",copy:"Copy",copied:"Copied",foot:"Editor · Motion · Art Director",
 dir:"Directed & edited",ed:"Edited",yt:"YouTube",ig:"Instagram"},
-fa:{fFav:"علاقه‌مندی‌ها",fItems:"مورد",fItem:"مورد",fBack:"بازگشت",cWin:"تماس",mWork:"نمونه‌کارها",mSocial:"سوشال مدیا",fWork:"نمونه‌کارها",fSocial:"سوشال مدیا",fFilm:"فیلم",fReel:"شوریل",deskScript:"تدوینگر",deskYear:"(۲۰۲۶)",
+fa:{fFav:"علاقه‌مندی‌ها",gEdu:"ویدیوی آموزشی",e1:"ویدیوی آموزشی · مونجارو",e1d:"تدوین ویدیوی آموزشی با تمرکز بر وضوح و ریتم.",introSnd:"صدا",introSkip:"رد کردن",fItems:"مورد",fItem:"مورد",fBack:"بازگشت",cWin:"تماس",mWork:"نمونه‌کارها",mSocial:"سوشال مدیا",fWork:"نمونه‌کارها",fSocial:"سوشال مدیا",fFilm:"فیلم",fReel:"شوریل",deskScript:"تدوینگر",deskYear:"(۲۰۲۶)",
 aTag:"درباره من",aHi:"<span>تدوینگر</span><span>کارگردان هنری</span><span>تصویربردار</span>",aSpec:"در این کارها تخصص دارم:",
 sp1b:"تدوین —",sp1:"ریتم و ساختار برای موزیک ویدیو، فیلم کوتاه، فشن و ریل برند",
 sp2b:"موشن گرافیک —",sp2:"تیتراژ، اینفوگرافیک سه‌بعدی و تبلیغ محصول با پایپ‌لاین کدنویسی‌شده و هوش مصنوعی",
@@ -662,9 +674,10 @@ if(!matchMedia("(prefers-reduced-motion: reduce)").matches)setInterval(()=>{if(!
 
 /* ===== Finder ===== */
 const PRODS=[{v:"jelly-moon.mp4",img:"jelly-moon.jpg",k:["p1","p1d"]},{v:"burger.mp4",img:"burger.jpg",k:["p2","p2d"]}];
-const KIDS=["social","prod","film"];
-const fname=(id,t)=>({work:t.fWork,social:t.gSocial,prod:t.gProd,film:t.gFilm})[id];
-const itemsOf=id=>id==="social"?WORK.filter(w=>w.grp==="social"):id==="film"?WORK.filter(w=>w.grp==="film"):id==="prod"?PRODS:[];
+const KIDS=["social","prod","film","edu"];
+const EDU=[{v:"edu-monjaro.mp4",img:"edu-monjaro.jpg",k:["e1","e1d"]}];
+const fname=(id,t)=>({work:t.fWork,social:t.gSocial,prod:t.gProd,film:t.gFilm,edu:t.gEdu})[id];
+const itemsOf=id=>id==="social"?WORK.filter(w=>w.grp==="social"):id==="film"?WORK.filter(w=>w.grp==="film"):id==="prod"?PRODS:id==="edu"?EDU:[];
 const F3=`<span class="f3d"><i class="b"></i><i class="p"></i><i class="fr"></i></span>`;
 const fins=[];
 class Fin{
@@ -675,6 +688,7 @@ class Fin{
     const sb=`<aside class="fxsb"><div class="h">${t.fFav}</div>${nav.map(n=>`<button data-go="${n}" aria-current="${n===cur}"><span class="ic"></span>${fname(n,t)}</button>`).join("")}</aside>`;
     let grid,count;
     if(cur==="work"){count=KIDS.length;grid=`<div class="fxgrid">${KIDS.map(k=>`<button class="fxt fxbtn" data-go="${k}">${F3}<span class="nm">${fname(k,t)}</span><span class="sb2">${itemsOf(k).length} ${t.fItems}</span></button>`).join("")}</div>`}
+    else if(cur==="edu"){count=EDU.length;grid=`<div class="fxgrid">${EDU.map(p=>`<div class="fxt"><div class="th r916" style="max-width:220px"><video src="${p.v}" poster="${p.img}" controls playsinline preload="metadata"></video></div><span class="nm">${t[p.k[0]]}</span><span class="sb2">${t.ed}</span><span class="ds">${t[p.k[1]]}</span></div>`).join("")}</div>`}
     else if(cur==="prod"){count=PRODS.length;grid=`<div class="fxgrid vid">${PRODS.map(p=>`<div class="fxt"><div class="th r45"><video src="${p.v}" poster="${p.img}" autoplay muted loop playsinline preload="metadata"></video></div><span class="nm">${t[p.k[0]]}</span><span class="ds">${t[p.k[1]]}</span></div>`).join("")}<p class="fxnote"><b>${t.pnL}</b> — ${t.pn}</p></div>`}
     else{const its=itemsOf(cur);count=its.length;const r=cur==="social"?"r916":"r169";
       grid=`<div class="fxgrid ${cur==="film"?"vid":""}">${its.map(w=>{const[n,d]=w[lang];return `<div class="fxt"><a class="fxt" style="padding:0" href="${w.url}" target="_blank" rel="noopener"><div class="th ${r}"><img src="${w.img}" alt="" loading="lazy"><span class="pl2">▶</span></div><span class="nm">${n}</span></a><span class="sb2">${w.dir?t.dir:t.ed} · ${w.src==="yt"?t.yt:t.ig} ↗</span><span class="ds">${d}</span>${w.tz?`<a class="fxz" href="${w.tz}" target="_blank" rel="noopener">${t.teaser} · ${t.ig} ↗</a>`:""}</div>`}).join("")}</div>`}
@@ -761,6 +775,21 @@ fxtb.addEventListener("pointerup",()=>{drag=null});
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+})();
+
+/* ===== intro ===== */
+(function(){
+  const L=document.getElementById("intro");if(!L)return;
+  const v=L.querySelector("video"),skip=document.getElementById("introSkip"),snd=document.getElementById("introSnd"),re=document.getElementById("replay");
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let seen=false;try{seen=sessionStorage.getItem("introSeen")==="1"}catch(_){}
+  function hide(){L.classList.remove("on");try{v.pause()}catch(_){}try{sessionStorage.setItem("introSeen","1")}catch(_){}}
+  function play(){L.classList.add("on");v.muted=true;snd.setAttribute("aria-pressed","false");try{v.currentTime=0}catch(_){}const p=v.play();if(p&&p.catch)p.catch(hide)}
+  v.addEventListener("ended",hide);v.addEventListener("error",hide);
+  skip.onclick=hide;
+  snd.onclick=()=>{v.muted=!v.muted;snd.setAttribute("aria-pressed",String(!v.muted))};
+  if(re)re.onclick=play;
+  if(!reduce&&!seen)play();
 })();
 
 parseHash();render();
